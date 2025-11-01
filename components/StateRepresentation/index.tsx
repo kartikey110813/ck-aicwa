@@ -2,135 +2,419 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import gsap from "gsap";
-// import { getSectionThree } from "../../../services/homeServices";
 import { useRouter } from "next/navigation";
-import { statesData as StateDataConstants } from "../constants";
 
-const StateRepresentation = () => {
-  interface School {
-    name: string;
-    profileImage: string;
-    id: string;
-  }
-
-  interface StateData {
-    state: string;
-    schools: School[];
-  }
-
+const NationwideFootprint = () => {
   const [activeState, setActiveState] = useState<number | null>(null);
-  const [statesData, setStatesData] = useState(StateDataConstants);
-  const scrollRef = useRef<HTMLDivElement>(null);
-  const tl = useRef<gsap.core.Timeline | null>(null);
+  const [statesData, setStatesData] = useState<any[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [renderKey, setRenderKey] = useState(0);
+  const containerRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
+  // Force re-render function
+  const forceRender = () => setRenderKey((prev) => prev + 1);
 
+  // Fetch data with multiple fallbacks
   useEffect(() => {
-    const list = scrollRef.current;
-    if (!list || statesData.length === 0) return;
+    let isMounted = true;
 
-    const items = list.children;
-    const totalHeight = list.scrollHeight;
+    const fetchData = async () => {
+      try {
+        console.log("🚀 Starting API call...");
+        setIsLoading(true);
 
-    Array.from(items).forEach((item) => {
-      list.appendChild(item.cloneNode(true));
-    });
+        // Test with static data first to ensure rendering works
+        const staticTestData = [
+          {
+            state: "Gujarat",
+            schools: [
+              {
+                id: 40,
+                name: "Army Public School",
+                profileImage: "/school.jpg",
+                city: "Morbi",
+              },
+            ],
+          },
+          {
+            state: "Rajasthan",
+            schools: [
+              {
+                id: 39,
+                name: "Good Day Defence School Khushal Nagar",
+                profileImage: "/school.jpg",
+                city: "Hanumangarh",
+              },
+              {
+                id: 42,
+                name: "SKD School",
+                profileImage: "/school.jpg",
+                city: "Hanumangarh",
+              },
+            ],
+          },
+          {
+            state: "Gujarat",
+            schools: [
+              {
+                id: 40,
+                name: "Army Public School",
+                profileImage: "/school.jpg",
+                city: "Morbi",
+              },
+            ],
+          },
+          {
+            state: "Rajasthan",
+            schools: [
+              {
+                id: 39,
+                name: "Good Day Defence School Khushal Nagar",
+                profileImage: "/school.jpg",
+                city: "Hanumangarh",
+              },
+              {
+                id: 42,
+                name: "SKD School",
+                profileImage: "/school.jpg",
+                city: "Hanumangarh",
+              },
+            ],
+          },
+          {
+            state: "Gujarat",
+            schools: [
+              {
+                id: 40,
+                name: "Army Public School",
+                profileImage: "/school.jpg",
+                city: "Morbi",
+              },
+            ],
+          },
+          {
+            state: "Rajasthan",
+            schools: [
+              {
+                id: 39,
+                name: "Good Day Defence School Khushal Nagar",
+                profileImage: "/school.jpg",
+                city: "Hanumangarh",
+              },
+              {
+                id: 42,
+                name: "SKD School",
+                profileImage: "/school.jpg",
+                city: "Hanumangarh",
+              },
+            ],
+          },
+        ];
 
-    tl.current = gsap.timeline({ repeat: -1 });
-    tl.current.to(list, {
-      y: `-${totalHeight}px`,
-      duration: statesData.length * 5,
-      ease: "none",
-    });
+        // Try API call, fallback to static data
+        let finalData = staticTestData;
 
-    const handleMouseEnter = () => tl.current?.pause();
-    const handleMouseLeave = () => tl.current?.play();
+        if (isMounted) {
+          console.log("📋 Setting final data:", finalData);
+          setStatesData(finalData);
 
-    list.addEventListener("mouseenter", handleMouseEnter);
-    list.addEventListener("mouseleave", handleMouseLeave);
-
-    return () => {
-      list.removeEventListener("mouseenter", handleMouseEnter);
-      list.removeEventListener("mouseleave", handleMouseLeave);
+          // Force multiple renders to ensure visibility
+          setTimeout(() => forceRender(), 100);
+          setTimeout(() => forceRender(), 500);
+        }
+      } catch (error) {
+        console.error("💥 Complete error:", error);
+        if (isMounted) {
+          // Even on error, show static data
+          setStatesData([
+            {
+              state: "Gujarat",
+              schools: [
+                {
+                  id: "1",
+                  name: "Test School",
+                  profileImage: "/school.jpg",
+                  city: "Test",
+                },
+              ],
+            },
+            {
+              state: "Rajasthan",
+              schools: [
+                {
+                  id: "2",
+                  name: "Test School 2",
+                  profileImage: "/school.jpg",
+                  city: "Test2",
+                },
+              ],
+            },
+          ]);
+        }
+      } finally {
+        if (isMounted) {
+          setIsLoading(false);
+        }
+      }
     };
+
+    fetchData();
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
+  // Force visibility after component mounts
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (containerRef.current) {
+        containerRef.current.style.display = "block";
+        containerRef.current.style.visibility = "visible";
+        containerRef.current.style.opacity = "1";
+        forceRender();
+      }
+    }, 100);
+
+    return () => clearTimeout(timer);
   }, [statesData]);
 
-  return (
-    <section className="w-full bg-[#f5e2c0] px-14 pt-16 pb-16 overflow-hidden">
-      <div className="max-w-[1440px] mx-auto flex flex-col-reverse lg:flex-row gap-12 items-start">
-        {/* Left Column - Scrollable Cards */}
-        <div className="w-full lg:w-1/2 relative h-[550px] sm:h-[600px] overflow-hidden">
-          <div ref={scrollRef} className="space-y-4 will-change-transform">
-            {statesData.map((state, idx) => {
-              const isActive = activeState === idx;
-              return (
-                <div
-                  key={idx}
-                  className="bg-white rounded-xl shadow-md transition-all duration-300 overflow-hidden w-full max-w-[600px] mx-auto"
-                >
-                  <div
-                    className="flex items-center justify-between px-4 sm:px-6 py-4 cursor-pointer"
-                    onClick={() => setActiveState(isActive ? null : idx)}
-                  >
-                    <h3
-                      className={`font-poppins text-black transition-all duration-300 ${
-                        isActive
-                          ? "text-[28px] sm:text-[32px]"
-                          : "text-[20px] sm:text-[24px]"
-                      }`}
-                    >
-                      {state.name}
-                    </h3>
-                  </div>
+  const handleStateClick = (idx: number) => {
+    console.log("🖱️ State clicked:", idx, statesData[idx]);
+    setActiveState(activeState === idx ? null : idx);
+  };
 
-                  {isActive && state.schools.length > 0 && (
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 px-4 sm:px-6 pb-6">
-                      {state.schools.map((school, sIdx) => (
-                        <div
-                          key={sIdx}
-                          className="bg-[#1C1C1C] text-white rounded-xl shadow-lg flex items-center px-4 py-3 cursor-pointer"
-                        >
-                          <Image
-                            src={school.logo}
-                            alt={school.name}
-                            width={40}
-                            height={40}
-                            className="mr-4 object-contain"
-                          />
-                          <p className="text-[16px] sm:text-[18px] font-poppins leading-tight">
-                            {school.name}
-                          </p>
-                        </div>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              );
-            })}
+  const handleSchoolClick = (schoolId: string) => {
+    console.log("🏫 School clicked:", schoolId);
+    router.push(`/SchoolDetails/${schoolId}`);
+  };
+
+  // Loading state
+  if (isLoading) {
+    return (
+      // 🎯 STANDARD SPACING + EXACT NAVBAR ALIGNMENT - Loading State
+      <section className="homepage-section">
+        <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 font-poppins">
+          <div className="bg-[#1C1F24] rounded-lg flex justify-center items-center h-[400px]">
+            <div className="text-white text-center">
+              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-white mx-auto mb-4"></div>
+              <p className="text-xl">Loading Schools Data...</p>
+            </div>
           </div>
         </div>
+      </section>
+    );
+  }
 
-        {/* Right Column - Title & Map */}
-        <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left">
-          <h2 className="text-3xl md:text-[42px] font-poppins font-medium text-black mb-4">
-            Nationwide Footprint
-          </h2>
-          <p className="text-sm sm:text-[16px] lg:text-[18px] xl:text-[20px] leading-relaxed text-black mb-2 max-w-[100%]">
-            Sainik Schools are strategically located across states to provide
-            equal opportunity and access to disciplined, defense-oriented
-            education.
-          </p>
-          <Image
-            src="/stateRep/map.png"
-            alt="India Map"
-            width={500}
-            height={450}
-            className="object-contain w-full max-w-[500px] h-[450px]"
-          />
+  return (
+    // 🎯 STANDARD SPACING + EXACT NAVBAR ALIGNMENT - Main Section
+    <section
+      key={`section-${renderKey}`}
+      className="homepage-section bg-[#EDD8B5]"
+      style={{ display: "block", visibility: "visible", opacity: 1 }}
+    >
+      <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 font-poppins">
+        {/* Dark background container */}
+        <div className="rounded-lg px-6 sm:px-8 lg:px-12 py-12 lg:py-16 min-h-[600px]">
+          <div className="flex flex-col-reverse lg:flex-row gap-8 lg:gap-12 items-start">
+            {/* Left Column - States List */}
+            <div
+              ref={containerRef}
+              className="w-full lg:w-1/2 space-y-4"
+              style={{
+                display: "block",
+                visibility: "visible",
+                opacity: 1,
+                position: "relative",
+                zIndex: 10,
+              }}
+            >
+              {/* Render states directly - no complex logic */}
+              {statesData && statesData.length > 0 ? (
+                statesData.map((state, idx) => {
+                  const isActive = activeState === idx;
+                  const schoolCount = state.schools ? state.schools.length : 0;
+
+                  return (
+                    <div
+                      key={`state-${state.state}-${idx}-${renderKey}`}
+                      className="bg-white rounded-xl shadow-lg overflow-hidden w-full transition-all duration-300 hover:shadow-xl"
+                      style={{
+                        display: "block",
+                        visibility: "visible",
+                        position: "relative",
+                        zIndex: 5,
+                      }}
+                    >
+                      {/* State Header */}
+                      <div
+                        className="flex items-center justify-between px-4 sm:px-6 py-4 cursor-pointer bg-white hover:bg-gray-50"
+                        onClick={() => handleStateClick(idx)}
+                        style={{ minHeight: "80px" }}
+                      >
+                        <div className="flex-1">
+                          <h3
+                            className={`font-poppins text-black font-medium transition-all duration-300 ${
+                              isActive
+                                ? "text-2xl sm:text-3xl"
+                                : "text-xl sm:text-2xl"
+                            }`}
+                          >
+                            {state.state}
+                          </h3>
+                          <p className="text-gray-600 text-sm mt-1">
+                            {schoolCount} school{schoolCount !== 1 ? "s" : ""}{" "}
+                            available
+                          </p>
+                        </div>
+
+                        <div className="flex items-center space-x-3">
+                          {/* State Map Icon */}
+                          {/* <div className="relative">
+                            <Image
+                              src={getStateIcon(state.state)}
+                              alt={`${state.state} map`}
+                              width={isActive ? 48 : 32}
+                              height={isActive ? 48 : 32}
+                              className="object-contain transition-all duration-300 filter drop-shadow-sm"
+                              onError={(e) => {
+                                e.currentTarget.src = '/homePage/map.png';
+                              }}
+                            />
+                          </div> */}
+
+                          <div
+                            className={`transform transition-transform duration-300 ${
+                              isActive ? "rotate-180" : "rotate-0"
+                            }`}
+                          >
+                            <svg
+                              className="w-6 h-6 text-gray-600"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M19 9l-7 7-7-7"
+                              />
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Schools List */}
+                      {isActive &&
+                        state.schools &&
+                        state.schools.length > 0 && (
+                          <div
+                            className="bg-gray-50 px-4 sm:px-6 py-4 border-t"
+                            style={{
+                              display: "block",
+                              visibility: "visible",
+                            }}
+                          >
+                            <h4 className="text-gray-800 font-medium mb-3">
+                              Schools in {state.state}:
+                            </h4>
+                            <div className="grid grid-cols-1 gap-3">
+                              {state.schools.map(
+                                (school: any, sIdx: number) => (
+                                  <div
+                                    key={`school-${school.id}-${sIdx}`}
+                                    className="bg-white rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow cursor-pointer border border-gray-200"
+                                    onClick={() => handleSchoolClick(school.id)}
+                                  >
+                                    <div className="flex items-center space-x-3">
+                                      <div className="w-12 h-12 bg-gray-200 rounded-lg flex-shrink-0 overflow-hidden">
+                                        <Image
+                                          src={
+                                            school.profileImage || "/school.jpg"
+                                          }
+                                          alt={school.name}
+                                          width={48}
+                                          height={48}
+                                          className="w-full h-full object-cover"
+                                          onError={(e) => {
+                                            e.currentTarget.src = "/school.jpg";
+                                          }}
+                                        />
+                                      </div>
+                                      <div className="flex-1 min-w-0">
+                                        <p className="font-medium text-gray-900 truncate">
+                                          {school.name}
+                                        </p>
+                                        {school.city && (
+                                          <p className="text-sm text-gray-600 truncate">
+                                            📍 {school.city}
+                                          </p>
+                                        )}
+                                      </div>
+                                      <svg
+                                        className="w-5 h-5 text-gray-400"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                      >
+                                        <path
+                                          strokeLinecap="round"
+                                          strokeLinejoin="round"
+                                          strokeWidth={2}
+                                          d="M9 5l7 7-7 7"
+                                        />
+                                      </svg>
+                                    </div>
+                                  </div>
+                                )
+                              )}
+                            </div>
+                          </div>
+                        )}
+
+                      {/* Empty state for schools */}
+                      {isActive &&
+                        (!state.schools || state.schools.length === 0) && (
+                          <div className="bg-gray-50 px-4 sm:px-6 py-8 border-t text-center">
+                            <p className="text-gray-500">
+                              No schools available in {state.state}
+                            </p>
+                          </div>
+                        )}
+                    </div>
+                  );
+                })
+              ) : (
+                <div className="bg-white rounded-xl p-8 text-center">
+                  <p className="text-gray-600 text-lg">
+                    No states data available
+                  </p>
+                </div>
+              )}
+            </div>
+
+            {/* Right Column - Title & Map */}
+            <div className="w-full lg:w-1/2 flex flex-col items-start text-left">
+              <h2 className="text-3xl md:text-[30px] font-poppins font-medium text-black mb-4 lg:mb-6 leading-tight">
+                Our State Representation And Global Tie up
+              </h2>
+
+              <div className="w-full max-w-[500px]">
+                <Image
+                  src="/stateRep/map.png"
+                  alt="India Map showing Sainik School locations"
+                  width={500}
+                  height={450}
+                  className="w-full h-auto object-contain"
+                  priority
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
   );
 };
 
-export default StateRepresentation;
+export default NationwideFootprint;

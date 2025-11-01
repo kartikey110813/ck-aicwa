@@ -36,7 +36,7 @@ const GallerySection = () => {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-b from-[#7a0e10] via-[#8b1417] to-[#3b0b0d] relative overflow-hidden">
+    <section className="py-20 relative overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0">
         <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-red-500/5 rounded-full blur-3xl"></div>

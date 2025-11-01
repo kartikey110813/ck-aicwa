@@ -1,5 +1,7 @@
-import FightForWorkers from "@/components/FightForWorkers/FightForWorkers";
+import AicwaVideo from "@/components/AicwaVideo";
+import { FightForWorkers } from "@/components/FightForWorkers/FightForWorkers";
 import GallerySection from "@/components/Gallery/GalarySection";
+import { GalleryNew } from "@/components/Gallery/GalleryNew";
 import Hero from "@/components/Home/Hero";
 import MembershipBenefits from "@/components/MembershipBenefits/MembershipBenefits";
 import Navbar from "@/components/Navbar/Navbar";
@@ -14,7 +16,8 @@ export default function HomePage() {
       <RenewMember />
       <MembershipBenefits />
       <FightForWorkers />
-      <GallerySection />
+      <GalleryNew />
+      <AicwaVideo />
       <StateRepresentation />
     </main>
   );

@@ -1,47 +1,214 @@
 "use client";
 
 import React from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { CanvasRevealEffect } from "@/components/FightForWorkers/canvas-reveal-effect";
 
-const FightForWorkers = () => {
+function FightForWorkers() {
   return (
-    <section className="flex flex-col md:flex-row w-full h-[100vh]">
-      {/* Left Quadrant Section */}
-      <div className="w-full md:w-1/2 bg-gradient-to-b from-[#0a0a0a] to-[#1a1a1a] text-[#e6d8a0] flex items-center justify-center p-10 relative">
-        <div className="relative w-full  h-[500px] flex items-center justify-center">
-          {/* Center Cross Lines */}
-          <div className="absolute w-px h-full bg-[#e6d8a0]/70"></div>
-          <div className="absolute h-px w-full bg-[#e6d8a0]/70"></div>
+    <>
+      <div className="bg-white dark:bg-black text-center">
+        <div className="py-10">
+          <h2 className="text-4xl mb-2 text-[#EDD8B5]">We Fight for cine workers</h2>
+          <p className="text-[#CF0E27]">
+            AICWA will draft a justice pathway against the injustice you have
+            suffered
+          </p>
+        </div>
+        <div className="py-20 flex flex-col lg:flex-row items-center justify-center  w-full gap-4 mx-auto px-8">
+          <Card title="Labour Law" icon={<AceternityIcon />}>
+            <CanvasRevealEffect
+              animationSpeed={5.1}
+              containerClassName="bg-emerald-900"
+            />
+          </Card>
+          <Card title="Film Industry Development" icon={<AceternityIcon />}>
+            <CanvasRevealEffect
+              animationSpeed={3}
+              containerClassName="bg-black"
+              colors={[
+                [236, 72, 153],
+                [232, 121, 249],
+              ]}
+              dotSize={2}
+            />
+            <div className="absolute inset-0 [mask-image:radial-gradient(400px_at_center,white,transparent)] bg-black/50 dark:bg-black/90" />
+          </Card>
+          <Card title="Rights for Film  Industry" icon={<AceternityIcon />}>
+            <CanvasRevealEffect
+              animationSpeed={3}
+              containerClassName="bg-sky-600"
+              colors={[[125, 211, 252]]}
+            />
+          </Card>
+          <Card title="Guidance" icon={<AceternityIcon />}>
+            <CanvasRevealEffect
+              animationSpeed={3}
+              containerClassName="bg-emerald-600"
+              colors={[[125, 211, 252]]}
+            />
+          </Card>
+        </div>
+      </div>
+    </>
+  );
+}
 
-          {/* Four Quadrants Text */}
-          <div className="absolute top-20 md:left-20 w-full">
-            <p className="text-lg md:text-xl">Labour Law</p>
-          </div>
-          <div className="absolute top-20 right-0 w-full text-end">
-            <p className="text-xs md:text-xl">Film Industry Development</p>
-          </div>
-          <div className="absolute bottom-20 md:left-10 left-0 w-full">
-            <p className="text-sm md:text-xl">Rights for Film Industry</p>
-          </div>
-          <div className="absolute bottom-20 right-10 md:right-20 w-full text-end">
-            <p className="text-lg md:text-xl">Guidance</p>
+function StaticDemo() {
+  return (
+    <>
+      <div className="py-20 flex flex-col lg:flex-row items-center justify-center bg-white dark:bg-black w-full gap-4 mx-auto px-8">
+        <div className="border border-black/[0.2] group/canvas-card flex items-center justify-center dark:border-white/[0.2]  max-w-sm w-full mx-auto p-4 relative h-[30rem] relative">
+          <Icon className="absolute h-6 w-6 -top-3 -left-3 dark:text-white text-black" />
+          <Icon className="absolute h-6 w-6 -bottom-3 -left-3 dark:text-white text-black" />
+          <Icon className="absolute h-6 w-6 -top-3 -right-3 dark:text-white text-black" />
+          <Icon className="absolute h-6 w-6 -bottom-3 -right-3 dark:text-white text-black" />
+          <AnimatePresence>
+            <div className="h-full w-full absolute inset-0">
+              <CanvasRevealEffect
+                animationSpeed={3}
+                containerClassName="bg-black"
+                colors={[
+                  [236, 72, 153],
+                  [232, 121, 249],
+                ]}
+                dotSize={2}
+              />
+            </div>
+          </AnimatePresence>
+          <div className="relative z-20">
+            <div className="text-center group-hover/canvas-card:-translate-y-4 group-hover/canvas-card:opacity-0 transition duration-200 w-full  mx-auto flex items-center justify-center">
+              <AceternityIcon />
+            </div>
+            <h2 className="dark:text-white text-xl opacity-0 group-hover/canvas-card:opacity-100 relative z-10 text-black mt-4  font-bold group-hover/canvas-card:text-white group-hover/canvas-card:-translate-y-2 transition duration-200">
+              I&apos;m static and I know it.
+            </h2>
           </div>
         </div>
       </div>
+    </>
+  );
+}
 
-      {/* Right Text Section */}
-      <div className="w-full h-full md:w-1/2 bg-[#f3e1ba] flex flex-col justify-center px-10 py-16 text-black">
-        <h2 className="text-[26px] md:text-[50px] font-semibold mb-4 leading-[45px]">
-          <span className="text-[#c70000] font-bold">We Fight for cine</span>
-          <br />
-          <span className="text-[#a10000] font-bold">workers</span>
-        </h2>
-        <p className="text-lg md:text-xl leading-relaxed max-w-md">
-          AICWA will draft a justice pathway against the injustice you have
-          suffered.
-        </p>
+function SectionDemo() {
+  const [hovered, setHovered] = React.useState(false);
+  return (
+    <div
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      className="h-[40rem] flex flex-col lg:flex-row overflow-hidden items-center justify-center bg-black w-full gap-4 mx-auto px-8 relative"
+    >
+      <p className="md:text-2xl text-2xl font-medium text-center text-white relative z-20 max-w-2xl mx-auto">
+        With insomnia, nothing&apos;s real. Everything is far away. Everything
+        is a copy, of a copy, of a copy
+      </p>
+      <AnimatePresence>
+        {hovered && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="h-full w-full absolute inset-0"
+          >
+            <CanvasRevealEffect
+              animationSpeed={5}
+              containerClassName="bg-transparent"
+              colors={[
+                [59, 130, 246],
+                [139, 92, 246],
+              ]}
+              opacities={[0.2, 0.2, 0.2, 0.2, 0.2, 0.4, 0.4, 0.4, 0.4, 1]}
+              dotSize={2}
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
+      <div className="absolute inset-0 [mask-image:radial-gradient(400px_at_center,white,transparent)] bg-black/50 dark:bg-black/90" />
+    </div>
+  );
+}
+
+const Card = ({
+  title,
+  icon,
+  children,
+}: {
+  title: string;
+  icon: React.ReactNode;
+  children?: React.ReactNode;
+}) => {
+  const [hovered, setHovered] = React.useState(false);
+  return (
+    <div
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      className="border border-black/[0.2] group/canvas-card flex items-center justify-center dark:border-white/[0.2]  max-w-sm w-full mx-auto p-4 relative h-[30rem] relative"
+    >
+      <Icon className="absolute h-6 w-6 -top-3 -left-3 dark:text-white text-black" />
+      <Icon className="absolute h-6 w-6 -bottom-3 -left-3 dark:text-white text-black" />
+      <Icon className="absolute h-6 w-6 -top-3 -right-3 dark:text-white text-black" />
+      <Icon className="absolute h-6 w-6 -bottom-3 -right-3 dark:text-white text-black" />
+
+      <AnimatePresence>
+        {hovered && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="h-full w-full absolute inset-0"
+          >
+            {children}
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      <div className="relative z-20">
+        <div className="text-center group-hover/canvas-card:-translate-y-4 group-hover/canvas-card:opacity-0 transition duration-200 w-full  mx-auto flex items-center justify-center">
+          {icon}
+        </div>
+        <h1 className="dark:text-white text-2xl opacity-0 group-hover/canvas-card:opacity-100 relative z-10 text-black mt-4  font-bold group-hover/canvas-card:text-white group-hover/canvas-card:-translate-y-2 transition duration-200">
+          {title}
+        </h1>
       </div>
-    </section>
+    </div>
   );
 };
 
-export default FightForWorkers;
+const AceternityIcon = () => {
+  return (
+    <svg
+      width="66"
+      height="65"
+      viewBox="0 0 66 65"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className="h-10 w-10 text-black dark:text-white group-hover/canvas-card:text-white "
+    >
+      <path
+        d="M8 8.05571C8 8.05571 54.9009 18.1782 57.8687 30.062C60.8365 41.9458 9.05432 57.4696 9.05432 57.4696"
+        stroke="currentColor"
+        strokeWidth="15"
+        strokeMiterlimit="3.86874"
+        strokeLinecap="round"
+        style={{ mixBlendMode: "darken" }}
+      />
+    </svg>
+  );
+};
+
+const Icon = ({ className, ...rest }: any) => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      strokeWidth="1.5"
+      stroke="currentColor"
+      className={className}
+      {...rest}
+    >
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m6-6H6" />
+    </svg>
+  );
+};
+
+export { FightForWorkers, SectionDemo, StaticDemo };
