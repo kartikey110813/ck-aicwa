@@ -52,7 +52,7 @@ function FloatingPaths({ position }: { position: number }) {
 
 export function GalleryNew() {
   return (
-    <div className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-gradient-to-b from-[#7a0e10] via-[#8b1417] to-[#3b0b0d] ">
+    <div className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-black">
       <div className="absolute inset-0">
         <FloatingPaths position={1} />
         <FloatingPaths position={-1} />

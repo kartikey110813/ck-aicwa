@@ -150,7 +150,6 @@ export default function Navbar() {
               {/* Explore Dropdown */}
               <div className="relative flex gap-5">
                 <Button text="Login" />
-                <Button text="Complaint" />
               </div>
             </div>
 

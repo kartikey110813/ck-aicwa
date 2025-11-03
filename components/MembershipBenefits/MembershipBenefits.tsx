@@ -6,6 +6,7 @@ import Image from "next/image";
 import { Benefit, benefits } from "../constants";
 import Button from "../ui/Button";
 import InterectiveCardDesign from "../ui/InterectiveCardDesign";
+import ButtonBasic from "../ui/ButtonBasic";
 
 const MembershipBenefits = () => {
   const [selected, setSelected] = useState<Benefit>(benefits[0]);
@@ -73,9 +74,7 @@ const MembershipBenefits = () => {
 
               <InterectiveCardDesign />
             </div>
-            <div className="flex mt-2">
-              <Button text="Get Membership" />
-            </div>
+            <div className="flex mt-2"></div>
 
             <div className="flex flex-row gap-10 mt-4">
               {selected.stats.map((stat, index) => (
@@ -88,7 +87,7 @@ const MembershipBenefits = () => {
                   </h2>
 
                   {/* Button */}
-                  <Button text={"Get Now"} />
+                  <ButtonBasic text={"Get Now"} />
                 </div>
               ))}
             </div>

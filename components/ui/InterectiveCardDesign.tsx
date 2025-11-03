@@ -38,7 +38,7 @@ export default function InterectiveCardDesign() {
         ref={cardRef}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
-        className="relative w-[400px] h-[250px] rounded-2xl transition-transform duration-150 ease-out cursor-pointer [transform-style:preserve-3d]"
+        className="relative w-[500px] h-[300px] rounded-2xl transition-transform duration-150 ease-out cursor-pointer [transform-style:preserve-3d]"
         style={{
           backgroundImage: `url('/images/aicwa-card.png')`,
           backgroundSize: "cover",
