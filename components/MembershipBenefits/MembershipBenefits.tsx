@@ -19,12 +19,12 @@ const MembershipBenefits = () => {
   });
 
   // Create a smooth upward scroll effect for cards
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "-60%"]);
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "-50%"]);
 
   return (
     <section
       ref={containerRef}
-      className="relative h-[300vh] bg-[#f5e2c0] flex flex-col"
+      className="relative h-[300vh] bg-[#EDD8B5] flex flex-col"
     >
       {/* Sticky Wrapper */}
       <div className="sticky top-0 h-screen flex flex-col md:flex-row items-stretch overflow-hidden p-10 md:px-12">
@@ -37,7 +37,7 @@ const MembershipBenefits = () => {
             <div
               key={benefit.id}
               onClick={() => setSelected(benefit)}
-              className={`relative cursor-pointer rounded-2xl shadow-lg p-6 bg-white items-center hover:scale-[1.02] transition-all border-l-8 ${
+              className={`relative cursor-pointer rounded-2xl shadow-lg px-6 py-3 bg-white items-center hover:scale-[1.02] transition-all border-l-8 ${
                 selected.id === benefit.id
                   ? "border-red-600"
                   : "border-transparent"
@@ -60,8 +60,8 @@ const MembershipBenefits = () => {
 
         {/* Right Fixed Section */}
         <div className="md:w-[60vw] bg-gradient-to-b from-[#7a0e10] via-[#8b1417] to-[#3b0b0d] text-white p-8  relative -ml-10 md:-ml-24 z-0 border-t-[10px] border-[#690714]">
-          <div className="absolute top-[-16px] left-0 w-full h-5 bg-[#f5e2c0] [clip-path:polygon(2_0,10%_0,12%_25%,88%_25%,90%_0,100%_0,100%_100%,90%_100%,88%_75%,12%_75%,10%_100%,0_100%)] shadow-[0px_15px_15px_#ff4d4d]"></div>
-          <div className="absolute top-[-8px] left-0 w-full h-5 bg-[#f5e2c0] [clip-path:polygon(0_0,10%_0,12%_25%,88%_25%,90%_0,100%_0,100%_100%,90%_100%,88%_75%,12%_75%,10%_100%,0_100%)]"></div>
+          <div className="absolute top-[-26px] left-0 w-full h-5 bg-[#EDD8B5] [clip-path:polygon(2_0,10%_0,12%_25%,88%_25%,90%_0,100%_0,100%_100%,90%_100%,88%_75%,12%_75%,10%_100%,0_100%)] shadow-[0px_15px_15px_#ff4d4d]"></div>
+          <div className="absolute top-[-22px] left-0 w-full h-5 bg-[#EDD8B5] [clip-path:polygon(0_0,10%_0,12%_25%,88%_25%,90%_0,100%_0,100%_100%,90%_100%,88%_75%,12%_75%,10%_100%,0_100%)]"></div>
           <div className="flex flex-col justify-between text-start md:pl-[15%]">
             <div>
               <h2 className="text-3xl font-bold mb-2">

@@ -5,9 +5,9 @@ export default function AicwaVideo() {
   return (
     <main>
       <HeroScrollVideo
-        title="AICWA"
+        title="About AICWA"
         subtitle="Subtitle"
-        meta="Q3 • 2025"
+        meta="Founded In• 2025"
         media="https://videos.pexels.com/video-files/6151238/6151238-hd_1920_1080_30fps.mp4"
         overlay={{
           caption: "PROJECT • 07",

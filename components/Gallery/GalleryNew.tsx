@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import GallerySection from "./GalarySection";
+import ButtonBasic from "../ui/ButtonBasic";
 
 function FloatingPaths({ position }: { position: number }) {
   const paths = Array.from({ length: 36 }, (_, i) => ({

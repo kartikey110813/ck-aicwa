@@ -48,11 +48,11 @@ export default function Navbar() {
   // Prevent hydration mismatch by not rendering until client-side
   if (!isClient) {
     return (
-      <div className="fixed top-0 left-0 w-full z-50 bg-transparent">
+      <div className="fixed top-0 left-0 w-full z-50 bg-[#EDD8B5]">
         <div className="px-3 sm:px-4 md:px-6 lg:px-8 xl:px-0">
-          <div className="bg-[#EDD8B5] w-full rounded-[16px] md:rounded-[20px] max-w-[1380px] mx-auto mt-4 mb-4 px-4 sm:px-6 lg:px-8 shadow-lg text-white py-[18px] relative">
+          <div className="bg-[#EDD8B5] w-full max-w-[1380px] mx-auto mt-4 mb-4 px-4 sm:px-6 lg:px-8 text-white py-[18px] relative">
             <div className="flex justify-between items-center">
-              <div className="flex items-center gap-2 sm:gap-4">
+              {/* <div className="flex items-center gap-2 sm:gap-4">
                 <Image
                   src="/images/logo.png"
                   alt="Sainik Logo"
@@ -60,7 +60,7 @@ export default function Navbar() {
                   height={60}
                   className="h-8 sm:h-10 w-auto"
                 />
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
@@ -69,13 +69,11 @@ export default function Navbar() {
   }
 
   return (
-    <div className="absolute top-0 left-0 w-full z-50 bg-transparent">
-      <div className="px-3 sm:px-0">
-        <div className="bg-[#EDD8B5] w-full rounded-[16px] md:rounded-[20px] max-w-[1380px] mx-auto mt-4 px-4 sm:px-6 lg:px-8 shadow-lg text-white py-[18px] relative">
+    <div className="absolute top-0 left-0 w-full z-50 bg-[#EDD8B5]">
+      <div className="">
+        <div className="w-full max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-8 text-white py-[18px] relative">
           <div className="flex justify-between items-center">
-            {/* Left Logo & Search */}
             <div className="flex items-center gap-2 sm:gap-4">
-              {/* Make logo clickable and route to home */}
               <Link href="/" className="cursor-pointer">
                 <Image
                   src="/images/logo.png"
@@ -88,12 +86,12 @@ export default function Navbar() {
             </div>
 
             {/* Desktop Menu */}
-            <div className="hidden md:flex items-center gap-4 lg:gap-6">
-              <div className="text-sm flex">
+            <div className="hidden md:flex items-center">
+              <div className="text-sm flex border-[2px] py-2 px-4 rounded-[20px] border-[#690714]">
                 <div className="px-3 py-2 rounded-md transition">
                   <Link
                     href="/"
-                    className="text-[#690714] hover:text-[#F10424] text-[16px]"
+                    className="text-[#690714] hover:text-[#F10424] hover:font-bold text-[16px]"
                   >
                     Home
                   </Link>
@@ -101,7 +99,7 @@ export default function Navbar() {
                 <div className="px-3 py-2 rounded-md transition">
                   <Link
                     href="/"
-                    className="text-[#690714] hover:text-[#F10424] text-[16px]"
+                    className="text-[#690714] hover:text-[#F10424] hover:font-bold text-[16px]"
                   >
                     About Us
                   </Link>
@@ -109,7 +107,7 @@ export default function Navbar() {
                 <div className="px-3 py-2 rounded-md transition">
                   <Link
                     href="/"
-                    className="text-[#690714] hover:text-[#F10424] text-[16px]"
+                    className="text-[#690714] hover:text-[#F10424] hover:font-bold text-[16px]"
                   >
                     Controversy
                   </Link>
@@ -117,7 +115,7 @@ export default function Navbar() {
                 <div className="px-3 py-2 rounded-md transition">
                   <Link
                     href="/"
-                    className="text-[#690714] hover:text-[#F10424] text-[16px]"
+                    className="text-[#690714] hover:text-[#F10424] hover:font-bold text-[16px]"
                   >
                     Membership
                   </Link>
@@ -125,7 +123,7 @@ export default function Navbar() {
                 <div className="px-3 py-2 rounded-md transition">
                   <Link
                     href="/"
-                    className="text-[#690714] hover:text-[#F10424] text-[16px]"
+                    className="text-[#690714] hover:text-[#F10424] hover:font-bold text-[16px]"
                   >
                     Gallery
                   </Link>
@@ -133,7 +131,7 @@ export default function Navbar() {
                 <div className="px-3 py-2 rounded-md transition">
                   <Link
                     href="/"
-                    className="text-[#690714] hover:text-[#F10424] text-[16px]"
+                    className="text-[#690714] hover:text-[#F10424] hover:font-bold text-[16px]"
                   >
                     Our Articles
                   </Link>
@@ -141,16 +139,16 @@ export default function Navbar() {
                 <div className="px-3 py-2 rounded-md transition">
                   <Link
                     href="/"
-                    className="text-[#690714] hover:text-[#F10424] text-[16px]"
+                    className="text-[#690714] hover:text-[#F10424] hover:font-bold text-[16px]"
                   >
                     Contact Us
                   </Link>
                 </div>
               </div>
               {/* Explore Dropdown */}
-              <div className="relative flex gap-5">
-                <Button text="Login" />
-              </div>
+            </div>
+            <div className="relative flex gap-5 hidden md:block">
+              <Button text="Login" />
             </div>
 
             {/* Mobile Right Side - Schools Near You + Hamburger */}
@@ -261,6 +259,9 @@ export default function Navbar() {
                           Contact Us
                         </span>
                       </Link>
+                      <div className="relative flex gap-5">
+                        <Button text="Login" />
+                      </div>
                     </div>
                   </div>
                 </nav>

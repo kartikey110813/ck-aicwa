@@ -2,7 +2,7 @@ import React from "react";
 
 const Button = ({ text }: { text: string }) => {
   return (
-    <button className="relative bg-transparent text-white font-semibold text-lg px-4 py-2 overflow-hidden group">
+    <button className="relative bg-transparent text-white font-semibold text-[14px] px-2 py-2 overflow-hidden group">
       <div className="px-8 py-2 bg-[#F10424] rounded-2xl ">{text}</div>
 
       {/* Top Left */}

@@ -26,12 +26,24 @@ const NationwideFootprint = () => {
         // Test with static data first to ensure rendering works
         const staticTestData = [
           {
-            state: "Gujarat",
+            state: "Maharashtra",
             schools: [
               {
-                id: 40,
-                name: "Army Public School",
-                profileImage: "/school.jpg",
+                id: 1,
+                name: "SANJAY PATIL",
+                profileImage: "/school.png",
+                city: "Morbi",
+              },
+              {
+                id: 2,
+                name: "CHHAYA SANGAVKAR",
+                profileImage: "/school.png",
+                city: "Morbi",
+              },
+              {
+                id: 3,
+                name: "NITIN RAJSHEKHAR",
+                profileImage: "/school.png",
                 city: "Morbi",
               },
             ],
@@ -40,71 +52,136 @@ const NationwideFootprint = () => {
             state: "Rajasthan",
             schools: [
               {
-                id: 39,
-                name: "Good Day Defence School Khushal Nagar",
-                profileImage: "/school.jpg",
+                id: 4,
+                name: "MR. SANJAY CHATURVEDI",
+                profileImage: "/school.png",
                 city: "Hanumangarh",
               },
               {
-                id: 42,
-                name: "SKD School",
-                profileImage: "/school.jpg",
+                id: 5,
+                name: "MR. KULDEEP SINGH KHANGAROT",
+                profileImage: "/school.png",
+                city: "Hanumangarh",
+              },
+              {
+                id: 6,
+                name: "LOKESH SINGH RATHORE",
+                profileImage: "/school.png",
                 city: "Hanumangarh",
               },
             ],
           },
           {
-            state: "Gujarat",
+            state: "Uttar Pradesh",
             schools: [
               {
-                id: 40,
-                name: "Army Public School",
-                profileImage: "/school.jpg",
+                id: 7,
+                name: "VIJAY PRATAP SINGH",
+                profileImage: "/school.png",
+                city: "Morbi",
+              },
+              {
+                id: 8,
+                name: "MR. RISHAB RANA",
+                profileImage: "/school.png",
+                city: "Morbi",
+              },
+              {
+                id: 9,
+                name: "SUBODH SINGH",
+                profileImage: "/school.png",
                 city: "Morbi",
               },
             ],
           },
           {
-            state: "Rajasthan",
+            state: "Jammu & Kashmir",
             schools: [
               {
-                id: 39,
-                name: "Good Day Defence School Khushal Nagar",
-                profileImage: "/school.jpg",
+                id: 10,
+                name: "RISHI KAUL",
+                profileImage: "/school.png",
                 city: "Hanumangarh",
               },
               {
-                id: 42,
-                name: "SKD School",
-                profileImage: "/school.jpg",
+                id: 11,
+                name: "MR. THAKUR SHARVAN BADYAL",
+                profileImage: "/school.png",
+                city: "Hanumangarh",
+              },
+              {
+                id: 12,
+                name: "PREETI MAHAJAN",
+                profileImage: "/school.png",
                 city: "Hanumangarh",
               },
             ],
           },
           {
-            state: "Gujarat",
+            state: "Delhi",
             schools: [
               {
-                id: 40,
-                name: "Army Public School",
-                profileImage: "/school.jpg",
+                id: 13,
+                name: "NAVEEN CHANDRA NARAYAN",
+                profileImage: "/school.png",
+                city: "Morbi",
+              },
+              {
+                id: 14,
+                name: "KUMAR RAJENDRA",
+                profileImage: "/school.png",
+                city: "Morbi",
+              },
+              {
+                id: 15,
+                name: "MANOJ ADHIKARI",
+                profileImage: "/school.png",
                 city: "Morbi",
               },
             ],
           },
           {
-            state: "Rajasthan",
+            state: "Madhya Pradesh",
             schools: [
               {
-                id: 39,
-                name: "Good Day Defence School Khushal Nagar",
-                profileImage: "/school.jpg",
+                id: 16,
+                name: "MS. EKTA THAKUR",
+                profileImage: "/school.png",
                 city: "Hanumangarh",
               },
               {
-                id: 42,
-                name: "SKD School",
-                profileImage: "/school.jpg",
+                id: 17,
+                name: "LOKENDRA SINGH",
+                profileImage: "/school.png",
+                city: "Hanumangarh",
+              },
+              {
+                id: 18,
+                name: "VAQAR QUERESI",
+                profileImage: "/school.png",
+                city: "Hanumangarh",
+              },
+            ],
+          },
+          {
+            state: "Gujrat",
+            schools: [
+              {
+                id: 19,
+                name: "MAHIMA SINGH",
+                profileImage: "/school.png",
+                city: "Hanumangarh",
+              },
+              {
+                id: 20,
+                name: "PRATIYUSH ARCHANA GUPTA",
+                profileImage: "/school.png",
+                city: "Hanumangarh",
+              },
+              {
+                id: 21,
+                name: "ABBAS KHAN",
+                profileImage: "/school.png",
                 city: "Hanumangarh",
               },
             ],
@@ -133,7 +210,7 @@ const NationwideFootprint = () => {
                 {
                   id: "1",
                   name: "Test School",
-                  profileImage: "/school.jpg",
+                  profileImage: "/school.png",
                   city: "Test",
                 },
               ],
@@ -144,7 +221,7 @@ const NationwideFootprint = () => {
                 {
                   id: "2",
                   name: "Test School 2",
-                  profileImage: "/school.jpg",
+                  profileImage: "/school.png",
                   city: "Test2",
                 },
               ],
@@ -262,8 +339,8 @@ const NationwideFootprint = () => {
                             {state.state}
                           </h3>
                           <p className="text-gray-600 text-sm mt-1">
-                            {schoolCount} school{schoolCount !== 1 ? "s" : ""}{" "}
-                            available
+                            {schoolCount} representative
+                            {schoolCount !== 1 ? "s" : ""}{" "}
                           </p>
                         </div>
 
@@ -316,7 +393,7 @@ const NationwideFootprint = () => {
                             }}
                           >
                             <h4 className="text-gray-800 font-medium mb-3">
-                              Schools in {state.state}:
+                              Representatives in {state.state}:
                             </h4>
                             <div className="grid grid-cols-1 gap-3">
                               {state.schools.map(
@@ -330,14 +407,14 @@ const NationwideFootprint = () => {
                                       <div className="w-12 h-12 bg-gray-200 rounded-lg flex-shrink-0 overflow-hidden">
                                         <Image
                                           src={
-                                            school.profileImage || "/school.jpg"
+                                            school.profileImage || "/school.png"
                                           }
                                           alt={school.name}
                                           width={48}
                                           height={48}
                                           className="w-full h-full object-cover"
                                           onError={(e) => {
-                                            e.currentTarget.src = "/school.jpg";
+                                            e.currentTarget.src = "/school.png";
                                           }}
                                         />
                                       </div>
@@ -345,11 +422,6 @@ const NationwideFootprint = () => {
                                         <p className="font-medium text-gray-900 truncate">
                                           {school.name}
                                         </p>
-                                        {school.city && (
-                                          <p className="text-sm text-gray-600 truncate">
-                                            📍 {school.city}
-                                          </p>
-                                        )}
                                       </div>
                                       <svg
                                         className="w-5 h-5 text-gray-400"

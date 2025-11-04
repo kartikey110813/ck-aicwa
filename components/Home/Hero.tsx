@@ -68,7 +68,7 @@ const Hero = () => {
           className="swiper-container relative w-full"
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 1.2, ease: "easeOut", delay: 0.3 }}
+          transition={{ duration: 1.2, ease: "easeIn", delay: 0.3 }}
         >
           <Swiper
             ref={swiperRef}
@@ -303,6 +303,7 @@ const Hero = () => {
       <style jsx global>{`
         .hero-swiper .swiper-slide {
           height: 100vh;
+          background: #edd8b5;
         }
 
         .swiper-pagination-bullet-custom {

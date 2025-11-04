@@ -99,7 +99,7 @@ export const HeroScrollVideo: React.FC<HeroScrollVideoProps> = ({
   meta = "2025",
   credits = (
     <>
-      <p>Crafted by</p>
+      <p>Started by</p>
       <p>Scott Clayton</p>
     </>
   ),

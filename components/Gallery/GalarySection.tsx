@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { Eye, Play, Camera, Film } from "lucide-react";
 import { galleryItems } from "../constants";
+import ButtonBasic from "../ui/ButtonBasic";
 
 const GallerySection = () => {
   const [activeCategory, setActiveCategory] = useState("all");
@@ -142,6 +143,9 @@ const GallerySection = () => {
             </motion.div>
           ))}
         </motion.div>
+      </div>
+      <div className="pt-6">
+        <ButtonBasic text="View All Controversies" />
       </div>
     </section>
   );
