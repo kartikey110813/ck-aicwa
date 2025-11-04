@@ -3,14 +3,18 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
+import { staticTestData } from "../constants";
 
 const NationwideFootprint = () => {
   const [activeState, setActiveState] = useState<number | null>(null);
   const [statesData, setStatesData] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [renderKey, setRenderKey] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
+  const scrollIntervalRef = useRef<NodeJS.Timeout | null>(null);
   const router = useRouter();
+
   // Force re-render function
   const forceRender = () => setRenderKey((prev) => prev + 1);
 
@@ -20,173 +24,7 @@ const NationwideFootprint = () => {
 
     const fetchData = async () => {
       try {
-        console.log("🚀 Starting API call...");
         setIsLoading(true);
-
-        // Test with static data first to ensure rendering works
-        const staticTestData = [
-          {
-            state: "Maharashtra",
-            schools: [
-              {
-                id: 1,
-                name: "SANJAY PATIL",
-                profileImage: "/school.png",
-                city: "Morbi",
-              },
-              {
-                id: 2,
-                name: "CHHAYA SANGAVKAR",
-                profileImage: "/school.png",
-                city: "Morbi",
-              },
-              {
-                id: 3,
-                name: "NITIN RAJSHEKHAR",
-                profileImage: "/school.png",
-                city: "Morbi",
-              },
-            ],
-          },
-          {
-            state: "Rajasthan",
-            schools: [
-              {
-                id: 4,
-                name: "MR. SANJAY CHATURVEDI",
-                profileImage: "/school.png",
-                city: "Hanumangarh",
-              },
-              {
-                id: 5,
-                name: "MR. KULDEEP SINGH KHANGAROT",
-                profileImage: "/school.png",
-                city: "Hanumangarh",
-              },
-              {
-                id: 6,
-                name: "LOKESH SINGH RATHORE",
-                profileImage: "/school.png",
-                city: "Hanumangarh",
-              },
-            ],
-          },
-          {
-            state: "Uttar Pradesh",
-            schools: [
-              {
-                id: 7,
-                name: "VIJAY PRATAP SINGH",
-                profileImage: "/school.png",
-                city: "Morbi",
-              },
-              {
-                id: 8,
-                name: "MR. RISHAB RANA",
-                profileImage: "/school.png",
-                city: "Morbi",
-              },
-              {
-                id: 9,
-                name: "SUBODH SINGH",
-                profileImage: "/school.png",
-                city: "Morbi",
-              },
-            ],
-          },
-          {
-            state: "Jammu & Kashmir",
-            schools: [
-              {
-                id: 10,
-                name: "RISHI KAUL",
-                profileImage: "/school.png",
-                city: "Hanumangarh",
-              },
-              {
-                id: 11,
-                name: "MR. THAKUR SHARVAN BADYAL",
-                profileImage: "/school.png",
-                city: "Hanumangarh",
-              },
-              {
-                id: 12,
-                name: "PREETI MAHAJAN",
-                profileImage: "/school.png",
-                city: "Hanumangarh",
-              },
-            ],
-          },
-          {
-            state: "Delhi",
-            schools: [
-              {
-                id: 13,
-                name: "NAVEEN CHANDRA NARAYAN",
-                profileImage: "/school.png",
-                city: "Morbi",
-              },
-              {
-                id: 14,
-                name: "KUMAR RAJENDRA",
-                profileImage: "/school.png",
-                city: "Morbi",
-              },
-              {
-                id: 15,
-                name: "MANOJ ADHIKARI",
-                profileImage: "/school.png",
-                city: "Morbi",
-              },
-            ],
-          },
-          {
-            state: "Madhya Pradesh",
-            schools: [
-              {
-                id: 16,
-                name: "MS. EKTA THAKUR",
-                profileImage: "/school.png",
-                city: "Hanumangarh",
-              },
-              {
-                id: 17,
-                name: "LOKENDRA SINGH",
-                profileImage: "/school.png",
-                city: "Hanumangarh",
-              },
-              {
-                id: 18,
-                name: "VAQAR QUERESI",
-                profileImage: "/school.png",
-                city: "Hanumangarh",
-              },
-            ],
-          },
-          {
-            state: "Gujrat",
-            schools: [
-              {
-                id: 19,
-                name: "MAHIMA SINGH",
-                profileImage: "/school.png",
-                city: "Hanumangarh",
-              },
-              {
-                id: 20,
-                name: "PRATIYUSH ARCHANA GUPTA",
-                profileImage: "/school.png",
-                city: "Hanumangarh",
-              },
-              {
-                id: 21,
-                name: "ABBAS KHAN",
-                profileImage: "/school.png",
-                city: "Hanumangarh",
-              },
-            ],
-          },
-        ];
 
         // Try API call, fallback to static data
         let finalData = staticTestData;
@@ -210,7 +48,7 @@ const NationwideFootprint = () => {
                 {
                   id: "1",
                   name: "Test School",
-                  profileImage: "/school.png",
+                  profileImage: "/placeholder.jpg",
                   city: "Test",
                 },
               ],
@@ -221,7 +59,7 @@ const NationwideFootprint = () => {
                 {
                   id: "2",
                   name: "Test School 2",
-                  profileImage: "/school.png",
+                  profileImage: "/placeholder.jpg",
                   city: "Test2",
                 },
               ],
@@ -255,6 +93,40 @@ const NationwideFootprint = () => {
     return () => clearTimeout(timer);
   }, [statesData]);
 
+  // Auto-scroll upward - very slow speed
+  useEffect(() => {
+    const startAutoScroll = () => {
+      if (scrollIntervalRef.current) {
+        clearInterval(scrollIntervalRef.current);
+      }
+
+      scrollIntervalRef.current = setInterval(() => {
+        if (!isHovered && containerRef.current) {
+          const container = containerRef.current;
+
+          // Scroll upward by 1 pixel (very slow)
+          container.scrollTop -= 1;
+
+          // If reached top, scroll to bottom for continuous loop
+          if (container.scrollTop <= 0) {
+            container.scrollTop = container.scrollHeight;
+          }
+        }
+      }, 50); // 50ms interval for smooth animation
+    };
+
+    // Start auto-scroll after data is loaded
+    if (statesData.length > 0) {
+      startAutoScroll();
+    }
+
+    return () => {
+      if (scrollIntervalRef.current) {
+        clearInterval(scrollIntervalRef.current);
+      }
+    };
+  }, [isHovered, statesData]);
+
   const handleStateClick = (idx: number) => {
     console.log("🖱️ State clicked:", idx, statesData[idx]);
     setActiveState(activeState === idx ? null : idx);
@@ -282,8 +154,15 @@ const NationwideFootprint = () => {
     );
   }
 
+  // Debug info (always visible)
+  console.log("🔍 Render state:", {
+    statesDataLength: statesData.length,
+    renderKey,
+    isLoading,
+    statesData: statesData.map((s) => s.state),
+  });
+
   return (
-    // 🎯 STANDARD SPACING + EXACT NAVBAR ALIGNMENT - Main Section
     <section
       key={`section-${renderKey}`}
       className="homepage-section bg-[#EDD8B5]"
@@ -291,12 +170,14 @@ const NationwideFootprint = () => {
     >
       <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 font-poppins">
         {/* Dark background container */}
-        <div className="rounded-lg px-6 sm:px-8 lg:px-12 py-12 lg:py-16 min-h-[600px]">
-          <div className="flex flex-col-reverse lg:flex-row gap-8 lg:gap-12 items-start">
+        <div className="rounded-lg px-6 sm:px-8 lg:px-12 py-8 lg:py-12 min-h-[450px]">
+          <div className="flex flex-col-reverse lg:flex-row gap-8 lg:gap-12 items-start lg:items-stretch">
             {/* Left Column - States List */}
             <div
               ref={containerRef}
-              className="w-full lg:w-1/2 space-y-4"
+              className="w-full lg:w-1/2 space-y-4 lg:max-h-[570px] overflow-scroll scrollbar-hide"
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
               style={{
                 display: "block",
                 visibility: "visible",
@@ -340,7 +221,7 @@ const NationwideFootprint = () => {
                           </h3>
                           <p className="text-gray-600 text-sm mt-1">
                             {schoolCount} representative
-                            {schoolCount !== 1 ? "s" : ""}{" "}
+                            {schoolCount !== 1 ? "s" : ""} available
                           </p>
                         </div>
 
@@ -395,7 +276,7 @@ const NationwideFootprint = () => {
                             <h4 className="text-gray-800 font-medium mb-3">
                               Representatives in {state.state}:
                             </h4>
-                            <div className="grid grid-cols-1 gap-3">
+                            <div className="flex overflow-scroll w-full gap-3 scrollbar-hide">
                               {state.schools.map(
                                 (school: any, sIdx: number) => (
                                   <div
@@ -403,18 +284,20 @@ const NationwideFootprint = () => {
                                     className="bg-white rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow cursor-pointer border border-gray-200"
                                     onClick={() => handleSchoolClick(school.id)}
                                   >
-                                    <div className="flex items-center space-x-3">
+                                    <div className="flex flex-col gap-4  items-center space-x-3">
                                       <div className="w-12 h-12 bg-gray-200 rounded-lg flex-shrink-0 overflow-hidden">
                                         <Image
                                           src={
-                                            school.profileImage || "/school.png"
+                                            school.profileImage ||
+                                            "/placeholder-school.png"
                                           }
                                           alt={school.name}
                                           width={48}
                                           height={48}
                                           className="w-full h-full object-cover"
                                           onError={(e) => {
-                                            e.currentTarget.src = "/school.png";
+                                            e.currentTarget.src =
+                                              "/placeholder-school.png";
                                           }}
                                         />
                                       </div>
@@ -423,19 +306,6 @@ const NationwideFootprint = () => {
                                           {school.name}
                                         </p>
                                       </div>
-                                      <svg
-                                        className="w-5 h-5 text-gray-400"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        viewBox="0 0 24 24"
-                                      >
-                                        <path
-                                          strokeLinecap="round"
-                                          strokeLinejoin="round"
-                                          strokeWidth={2}
-                                          d="M9 5l7 7-7 7"
-                                        />
-                                      </svg>
                                     </div>
                                   </div>
                                 )
@@ -467,10 +337,14 @@ const NationwideFootprint = () => {
 
             {/* Right Column - Title & Map */}
             <div className="w-full lg:w-1/2 flex flex-col items-start text-left">
-              <h2 className="text-3xl md:text-[30px] font-poppins font-medium text-black mb-4 lg:mb-6 leading-tight">
-                Our State Representation And Global Tie up
+              <h2 className="text-3xl md:text-[42px] font-poppins font-medium text-black mb-4 lg:mb-6 leading-tight">
+                Nationwide Footprint
               </h2>
-
+              <p className="text-base sm:text-lg lg:text-[20px] leading-relaxed text-[#690714] mb-8 lg:mb-12">
+                Sainik Schools are strategically located across states to
+                provide equal opportunity and access to disciplined,
+                defense-oriented education.
+              </p>
               <div className="w-full max-w-[500px]">
                 <Image
                   src="/stateRep/map.png"

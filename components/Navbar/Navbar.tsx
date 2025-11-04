@@ -91,7 +91,7 @@ export default function Navbar() {
                 <div className="px-3 py-2 rounded-md transition">
                   <Link
                     href="/"
-                    className="text-[#690714] hover:text-[#F10424] hover:font-bold text-[16px]"
+                    className="relative text-[#690714] text-[16px] transition-colors duration-300 hover:text-[#F10424] after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-[2px] after:bg-[#F10424] after:transition-all after:duration-300 hover:after:w-full"
                   >
                     Home
                   </Link>
@@ -99,7 +99,7 @@ export default function Navbar() {
                 <div className="px-3 py-2 rounded-md transition">
                   <Link
                     href="/"
-                    className="text-[#690714] hover:text-[#F10424] hover:font-bold text-[16px]"
+                    className="relative text-[#690714] text-[16px] transition-colors duration-300 hover:text-[#F10424] after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-[2px] after:bg-[#F10424] after:transition-all after:duration-300 hover:after:w-full"
                   >
                     About Us
                   </Link>
@@ -107,7 +107,7 @@ export default function Navbar() {
                 <div className="px-3 py-2 rounded-md transition">
                   <Link
                     href="/"
-                    className="text-[#690714] hover:text-[#F10424] hover:font-bold text-[16px]"
+                    className="relative text-[#690714] text-[16px] transition-colors duration-300 hover:text-[#F10424] after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-[2px] after:bg-[#F10424] after:transition-all after:duration-300 hover:after:w-full"
                   >
                     Controversy
                   </Link>
@@ -115,7 +115,7 @@ export default function Navbar() {
                 <div className="px-3 py-2 rounded-md transition">
                   <Link
                     href="/"
-                    className="text-[#690714] hover:text-[#F10424] hover:font-bold text-[16px]"
+                    className="relative text-[#690714] text-[16px] transition-colors duration-300 hover:text-[#F10424] after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-[2px] after:bg-[#F10424] after:transition-all after:duration-300 hover:after:w-full"
                   >
                     Membership
                   </Link>
@@ -123,7 +123,7 @@ export default function Navbar() {
                 <div className="px-3 py-2 rounded-md transition">
                   <Link
                     href="/"
-                    className="text-[#690714] hover:text-[#F10424] hover:font-bold text-[16px]"
+                    className="relative text-[#690714] text-[16px] transition-colors duration-300 hover:text-[#F10424] after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-[2px] after:bg-[#F10424] after:transition-all after:duration-300 hover:after:w-full"
                   >
                     Gallery
                   </Link>
@@ -131,7 +131,7 @@ export default function Navbar() {
                 <div className="px-3 py-2 rounded-md transition">
                   <Link
                     href="/"
-                    className="text-[#690714] hover:text-[#F10424] hover:font-bold text-[16px]"
+                    className="relative text-[#690714] text-[16px] transition-colors duration-300 hover:text-[#F10424] after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-[2px] after:bg-[#F10424] after:transition-all after:duration-300 hover:after:w-full"
                   >
                     Our Articles
                   </Link>
@@ -139,7 +139,7 @@ export default function Navbar() {
                 <div className="px-3 py-2 rounded-md transition">
                   <Link
                     href="/"
-                    className="text-[#690714] hover:text-[#F10424] hover:font-bold text-[16px]"
+                    className="relative text-[#690714] text-[16px] transition-colors duration-300 hover:text-[#F10424] after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-[2px] after:bg-[#F10424] after:transition-all after:duration-300 hover:after:w-full"
                   >
                     Contact Us
                   </Link>

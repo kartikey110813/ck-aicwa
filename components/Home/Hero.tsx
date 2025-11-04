@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay, Parallax } from "swiper/modules";
@@ -12,12 +12,13 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/parallax";
-import { newsData } from "../constants";
+import { newsData, newsDataMini } from "../constants";
 
 // GSAP is ready to use
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
   const swiperRef = useRef<any>(null);
+  const [currentSlide, setCurrentSlide] = useState(1);
 
   useEffect(() => {
     if (heroRef.current) {
@@ -70,7 +71,7 @@ const Hero = () => {
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 1.2, ease: "easeIn", delay: 0.3 }}
         >
-          <Swiper
+          {/* <Swiper
             ref={swiperRef}
             modules={[Navigation, Pagination, Autoplay, Parallax]}
             spaceBetween={0}
@@ -93,7 +94,8 @@ const Hero = () => {
             speed={1000}
             loop={true}
             className="hero-swiper w-full overflow-hidden bg-[#691218]"
-          >
+          > */}
+          <div className="hero-swiper w-full overflow-hidden bg-[#691218]">
             {newsData.map((news, index) => (
               <SwiperSlide key={news.id}>
                 <div className="relative h-full md:h-[85vh] overflow-hidden">
@@ -177,15 +179,16 @@ const Hero = () => {
                 </div>
               </SwiperSlide>
             ))}
-          </Swiper>
+          </div>
+          {/* </Swiper> */}
 
           {/* Custom Navigation Buttons */}
-          <button className="swiper-button-prev-custom absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-12 sm:h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-all duration-300 group">
+          {/* <button className="swiper-button-prev-custom absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-12 sm:h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-all duration-300 group">
             <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6 group-hover:-translate-x-1 transition-transform duration-300" />
           </button>
           <button className="swiper-button-next-custom absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-12 sm:h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-all duration-300 group">
             <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6 group-hover:translate-x-1 transition-transform duration-300" />
-          </button>
+          </button> */}
 
           {/* Custom Pagination */}
           <div className="swiper-pagination-custom absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex gap-2"></div>
@@ -196,7 +199,7 @@ const Hero = () => {
           className="absolute bottom-10 right-4 z-30 w-72 sm:w-80 h-28 sm:h-32 hidden md:block"
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, delay: 1 }}
+          transition={{ duration: 1, delay: 1 }}
         >
           <Swiper
             modules={[Autoplay]}
@@ -206,11 +209,14 @@ const Hero = () => {
               delay: 2000,
               disableOnInteraction: false,
             }}
-            speed={800}
+            speed={2500}
             loop={true}
             className="small-swiper rounded-lg overflow-hidden shadow-lg"
+            onSlideChange={(swiper) =>
+              setCurrentSlide((swiper.realIndex % newsDataMini.length) + 1)
+            }
           >
-            {newsData.slice(0, 6).map((news, index) => (
+            {newsDataMini.slice(0, 6).map((news, index) => (
               <SwiperSlide key={`small-${news.id}`}>
                 <div className="relative h-28 sm:h-32 overflow-hidden cursor-pointer group">
                   {/* Background Image */}
@@ -240,10 +246,19 @@ const Hero = () => {
               </SwiperSlide>
             ))}
           </Swiper>
-          <div className="flex justify-between text-sm font-semibold text-gray-300">
-            <span>{String(1).padStart(2, "0")}</span>
-            <div className="h-[2px] bg-red-400 flex-1 mx-3 mt-2" />
-            <span>{String(newsData.length).padStart(2, "0")}</span>
+          <div className="flex items-center justify-between text-sm font-semibold text-black mt-1">
+            <span>{String(currentSlide).padStart(2, "0")}</span>
+
+            <div className="relative flex-1 mx-3 h-[3px] bg-gray-300 rounded-full overflow-hidden">
+              <div
+                className="absolute left-0 top-0 h-full bg-[#F10424] transition-all duration-500 ease-in-out"
+                style={{
+                  width: `${(currentSlide / newsDataMini.length) * 100}%`,
+                }}
+              />
+            </div>
+
+            <span>{String(newsDataMini.length).padStart(2, "0")}</span>
           </div>
         </motion.div>
 
@@ -266,7 +281,7 @@ const Hero = () => {
             loop={true}
             className="small-swiper rounded-lg overflow-hidden shadow-lg"
           >
-            {newsData.slice(0, 4).map((news, index) => (
+            {newsDataMini.slice(0, 4).map((news, index) => (
               <SwiperSlide key={`mobile-${news.id}`}>
                 <div className="relative h-24 overflow-hidden cursor-pointer group">
                   {/* Background Image */}

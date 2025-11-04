@@ -511,16 +511,16 @@ export const HeroScrollVideo: React.FC<HeroScrollVideoProps> = ({
         /* System theme: define light defaults, override in dark */
         .hsv-root {
           /* Light */
-          --bg: var(--bg);
-          --text: #ff1115;
-          --muted: #6b7280;
-          --muted-bg: rgba(15,17,21,0.06);
-          --muted-border: rgba(15,17,21,0.12);
-          --overlay-bg: rgba(10,10,14,0.42);
+          --bg: #0b0c10;
+          --text: #e5e7eb;
+          --muted: #9ca3af;
+          --muted-bg: rgba(229,231,235,0.08);
+          --muted-border: rgba(229,231,235,0.14);
+          --overlay-bg: rgba(8,8,12,0.55);
           --overlay-text: #ffffff;
-          --accent: #7c3aed;    /* violet */
-          --accent-2: #22d3ee;  /* cyan */
-          --shadow: 0 10px 30px rgba(0,0,0,0.08);
+          --accent: #8b5cf6;
+          --accent-2: #22d3ee;
+          --shadow: 0 12px 36px rgba(0,0,0,0.35);
 
           color-scheme: light dark;
           background: var(--bg);
@@ -544,14 +544,14 @@ export const HeroScrollVideo: React.FC<HeroScrollVideoProps> = ({
         }
 
         .hsv-container {
-          height: 100vh;
+          height: 40vh;
           display: grid;
           place-items: center;
           padding: clamp(16px, 3vw, 40px);
           perspective: 900px;
         }
 
-        .hsv-headline { 
+        .hsv-headline {
           text-align: center;
           transform-style: preserve-3d;
           max-width: min(100%, 1100px);

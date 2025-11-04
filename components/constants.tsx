@@ -25,6 +25,78 @@ export const newsData: NewsItem[] = [
       "https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
     featured: true,
   },
+  // {
+  //   id: 2,
+  //   title: "Climate Change Summit Reaches Historic Agreement",
+  //   excerpt:
+  //     "World leaders unite to combat climate change with ambitious new environmental policies and renewable energy initiatives.",
+  //   content:
+  //     "The global climate summit concluded with a historic agreement that sets new targets for carbon reduction and renewable energy adoption.",
+  //   author: "Environmental Reporter",
+  //   date: "2024-01-12",
+  //   category: "Environment",
+  //   image:
+  //     "https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+  //   featured: true,
+  // },
+  // {
+  //   id: 3,
+  //   title: "Space Exploration Reaches New Milestone",
+  //   excerpt:
+  //     "Successful Mars mission opens new possibilities for human colonization and scientific discovery.",
+  //   content:
+  //     "The latest Mars exploration mission has successfully landed and begun transmitting data that could reshape our understanding of the red planet.",
+  //   author: "Space Correspondent",
+  //   date: "2024-01-10",
+  //   category: "Science",
+  //   image:
+  //     "https://images.unsplash.com/photo-1446776877081-d282a0f896e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80",
+  //   featured: true,
+  // },
+  // {
+  //   id: 4,
+  //   title: "Economic Recovery Shows Strong Growth Signals",
+  //   excerpt:
+  //     "Global markets demonstrate resilience with record-breaking growth in key sectors and emerging technologies.",
+  //   content:
+  //     "Economic indicators show promising signs of recovery with technology and green energy sectors leading the way.",
+  //   author: "Economic Analyst",
+  //   date: "2024-01-08",
+  //   category: "Economy",
+  //   image:
+  //     "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+  //   featured: true,
+  // },
+  // {
+  //   id: 5,
+  //   title: "Breakthrough in Quantum Computing Achieved",
+  //   excerpt:
+  //     "Scientists achieve quantum supremacy milestone that could revolutionize computing and cryptography.",
+  //   content:
+  //     "A major breakthrough in quantum computing has been achieved, bringing us closer to practical quantum applications.",
+  //   author: "Tech Reporter",
+  //   date: "2024-01-05",
+  //   category: "Technology",
+  //   image:
+  //     "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+  //   featured: true,
+  // },
+];
+export const newsDataMini: NewsItem[] = [
+  {
+    id: 1,
+    title: "Revolutionary AI Technology Transforms Healthcare Industry",
+    excerpt:
+      "Breakthrough artificial intelligence system promises to revolutionize medical diagnosis and treatment planning.",
+    content:
+      "A groundbreaking AI technology has been developed that can analyze medical images with unprecedented accuracy, potentially saving millions of lives worldwide.",
+    author: "Dr. Sarah Johnson",
+    date: "2024-01-15",
+    category: "Technology",
+    image:
+      "https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+    featured: true,
+  },
   {
     id: 2,
     title: "Climate Change Summit Reaches Historic Agreement",
@@ -313,6 +385,171 @@ export const benefits: Benefit[] = [
     stats: [
       { label: "Get My Card Now", value: 2356, icon: "👷‍♂️" },
       { label: "Renew My Card", value: 4563, icon: "🤝" },
+    ],
+  },
+];
+
+// Test with static data first to ensure rendering works
+export const staticTestData = [
+  {
+    state: "Maharashtra",
+    schools: [
+      {
+        id: 1,
+        name: "SANJAY PATIL",
+        profileImage: "/school.png",
+        city: "Morbi",
+      },
+      {
+        id: 2,
+        name: "CHHAYA SANGAVKAR",
+        profileImage: "/school.png",
+        city: "Morbi",
+      },
+      {
+        id: 3,
+        name: "NITIN RAJSHEKHAR",
+        profileImage: "/school.png",
+        city: "Morbi",
+      },
+    ],
+  },
+  {
+    state: "Rajasthan",
+    schools: [
+      {
+        id: 4,
+        name: "MR. SANJAY CHATURVEDI",
+        profileImage: "/school.png",
+        city: "Hanumangarh",
+      },
+      {
+        id: 5,
+        name: "MR. KULDEEP SINGH KHANGAROT",
+        profileImage: "/school.png",
+        city: "Hanumangarh",
+      },
+      {
+        id: 6,
+        name: "LOKESH SINGH RATHORE",
+        profileImage: "/school.png",
+        city: "Hanumangarh",
+      },
+    ],
+  },
+  {
+    state: "Uttar Pradesh",
+    schools: [
+      {
+        id: 7,
+        name: "VIJAY PRATAP SINGH",
+        profileImage: "/school.png",
+        city: "Morbi",
+      },
+      {
+        id: 8,
+        name: "MR. RISHAB RANA",
+        profileImage: "/school.png",
+        city: "Morbi",
+      },
+      {
+        id: 9,
+        name: "SUBODH SINGH",
+        profileImage: "/school.png",
+        city: "Morbi",
+      },
+    ],
+  },
+  {
+    state: "Jammu & Kashmir",
+    schools: [
+      {
+        id: 10,
+        name: "RISHI KAUL",
+        profileImage: "/school.png",
+        city: "Hanumangarh",
+      },
+      {
+        id: 11,
+        name: "MR. THAKUR SHARVAN BADYAL",
+        profileImage: "/school.png",
+        city: "Hanumangarh",
+      },
+      {
+        id: 12,
+        name: "PREETI MAHAJAN",
+        profileImage: "/school.png",
+        city: "Hanumangarh",
+      },
+    ],
+  },
+  {
+    state: "Delhi",
+    schools: [
+      {
+        id: 13,
+        name: "NAVEEN CHANDRA NARAYAN",
+        profileImage: "/school.png",
+        city: "Morbi",
+      },
+      {
+        id: 14,
+        name: "KUMAR RAJENDRA",
+        profileImage: "/school.png",
+        city: "Morbi",
+      },
+      {
+        id: 15,
+        name: "MANOJ ADHIKARI",
+        profileImage: "/school.png",
+        city: "Morbi",
+      },
+    ],
+  },
+  {
+    state: "Madhya Pradesh",
+    schools: [
+      {
+        id: 16,
+        name: "MS. EKTA THAKUR",
+        profileImage: "/school.png",
+        city: "Hanumangarh",
+      },
+      {
+        id: 17,
+        name: "LOKENDRA SINGH",
+        profileImage: "/school.png",
+        city: "Hanumangarh",
+      },
+      {
+        id: 18,
+        name: "VAQAR QUERESI",
+        profileImage: "/school.png",
+        city: "Hanumangarh",
+      },
+    ],
+  },
+  {
+    state: "Gujrat",
+    schools: [
+      {
+        id: 19,
+        name: "MAHIMA SINGH",
+        profileImage: "/school.png",
+        city: "Hanumangarh",
+      },
+      {
+        id: 20,
+        name: "PRATIYUSH ARCHANA GUPTA",
+        profileImage: "/school.png",
+        city: "Hanumangarh",
+      },
+      {
+        id: 21,
+        name: "ABBAS KHAN",
+        profileImage: "/school.png",
+        city: "Hanumangarh",
+      },
     ],
   },
 ];
