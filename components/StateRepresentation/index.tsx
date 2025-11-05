@@ -143,10 +143,10 @@ const NationwideFootprint = () => {
       // 🎯 STANDARD SPACING + EXACT NAVBAR ALIGNMENT - Loading State
       <section className="homepage-section">
         <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 font-poppins">
-          <div className="bg-[#1C1F24] rounded-lg flex justify-center items-center h-[400px]">
+          <div className="bg-transparent rounded-lg flex justify-center items-center h-[400px]">
             <div className="text-white text-center">
               <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-white mx-auto mb-4"></div>
-              <p className="text-xl">Loading Schools Data...</p>
+              <p className="text-xl">Loading Representatives Data...</p>
             </div>
           </div>
         </div>
@@ -168,11 +168,35 @@ const NationwideFootprint = () => {
       className="homepage-section bg-[#EDD8B5]"
       style={{ display: "block", visibility: "visible", opacity: 1 }}
     >
-      <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 font-poppins">
+      <div className="w-full mx-auto font-poppins">
         {/* Dark background container */}
-        <div className="rounded-lg px-6 sm:px-8 lg:px-12 py-8 lg:py-12 min-h-[450px]">
-          <div className="flex flex-col-reverse lg:flex-row gap-8 lg:gap-12 items-start lg:items-stretch">
+        <div className="rounded-lg px-6 sm:px-8 lg:px-20 py-8 lg:py-10 min-h-[450px]">
+          <div className="flex flex-col-reverse justify-between lg:flex-row gap-8 lg:gap-12 items-start lg:items-stretch">
             {/* Left Column - States List */}
+            <div className="w-full lg:w-1/2 flex flex-col items-start justify-between text-left">
+              <div>
+                <h2 className="text-3xl md:text-[42px] font-poppins font-medium text-black mb-4 lg:mb-6 leading-[25px]">
+                  Nationwide Footprint
+                </h2>
+                <p className="text-base sm:text-lg lg:text-[20px] leading-relaxed text-[#690714]">
+                  Sainik Schools are strategically located across states to
+                  provide equal opportunity and access to disciplined,
+                  defense-oriented education.
+                </p>
+              </div>
+              <div className="w-full max-w-[500px]">
+                <Image
+                  src="/stateRep/map.png"
+                  alt="India Map showing Sainik School locations"
+                  width={500}
+                  height={450}
+                  className="w-full h-auto object-contain"
+                  priority
+                />
+              </div>
+            </div>
+
+            {/* Right Column - Title & Map */}
             <div
               ref={containerRef}
               className="w-full lg:w-1/2 space-y-4 lg:max-h-[570px] overflow-scroll scrollbar-hide"
@@ -276,7 +300,7 @@ const NationwideFootprint = () => {
                             <h4 className="text-gray-800 font-medium mb-3">
                               Representatives in {state.state}:
                             </h4>
-                            <div className="flex overflow-scroll w-full gap-3 scrollbar-hide">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 w-full gap-4">
                               {state.schools.map(
                                 (school: any, sIdx: number) => (
                                   <div
@@ -333,28 +357,6 @@ const NationwideFootprint = () => {
                   </p>
                 </div>
               )}
-            </div>
-
-            {/* Right Column - Title & Map */}
-            <div className="w-full lg:w-1/2 flex flex-col items-start text-left">
-              <h2 className="text-3xl md:text-[42px] font-poppins font-medium text-black mb-4 lg:mb-6 leading-tight">
-                Nationwide Footprint
-              </h2>
-              <p className="text-base sm:text-lg lg:text-[20px] leading-relaxed text-[#690714] mb-8 lg:mb-12">
-                Sainik Schools are strategically located across states to
-                provide equal opportunity and access to disciplined,
-                defense-oriented education.
-              </p>
-              <div className="w-full max-w-[500px]">
-                <Image
-                  src="/stateRep/map.png"
-                  alt="India Map showing Sainik School locations"
-                  width={500}
-                  height={450}
-                  className="w-full h-auto object-contain"
-                  priority
-                />
-              </div>
             </div>
           </div>
         </div>

@@ -7,15 +7,17 @@ import { CanvasRevealEffect } from "@/components/FightForWorkers/canvas-reveal-e
 function FightForWorkers() {
   return (
     <>
-      <div className="bg-white dark:bg-black text-center">
-        <div className="py-10">
-          <h2 className="text-4xl mb-2 text-[#EDD8B5]">We Fight for cine workers</h2>
+      <div className="bg-white dark:bg-black text-center py-10 px-20">
+        <div className="mb-10">
+          <h2 className="text-4xl mb-2 text-[#EDD8B5]">
+            We Fight for cine workers
+          </h2>
           <p className="text-[#CF0E27]">
             AICWA will draft a justice pathway against the injustice you have
             suffered
           </p>
         </div>
-        <div className="py-20 flex flex-col lg:flex-row items-center justify-center  w-full gap-4 mx-auto px-8">
+        <div className="flex flex-col lg:flex-row items-center justify-center  w-full gap-4 mx-auto">
           <Card title="Labour Law" icon={<AceternityIcon />}>
             <CanvasRevealEffect
               animationSpeed={5.1}

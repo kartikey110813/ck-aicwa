@@ -27,7 +27,7 @@ const MembershipBenefits = () => {
       className="relative h-[300vh] bg-[#EDD8B5] flex flex-col"
     >
       {/* Sticky Wrapper */}
-      <div className="sticky top-0 h-screen flex flex-col md:flex-row items-stretch overflow-hidden p-10 md:px-12">
+      <div className="sticky top-0 h-screen flex flex-col md:flex-row items-stretch overflow-hidden py-10 md:px-20">
         {/* Left Scrollable Section */}
         <motion.div
           style={{ y }}
@@ -36,7 +36,7 @@ const MembershipBenefits = () => {
           {benefits.map((benefit) => (
             <div
               key={benefit.id}
-              onClick={() => setSelected(benefit)}
+              onMouseEnter={() => setSelected(benefit)}
               className={`relative cursor-pointer rounded-2xl shadow-lg px-6 py-3 bg-white items-center hover:scale-[1.02] transition-all border-l-8 ${
                 selected.id === benefit.id
                   ? "border-red-600"

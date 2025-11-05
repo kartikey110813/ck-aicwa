@@ -98,7 +98,7 @@ const Hero = () => {
           <div className="hero-swiper w-full overflow-hidden bg-[#691218]">
             {newsData.map((news, index) => (
               <SwiperSlide key={news.id}>
-                <div className="relative h-full md:h-[85vh] overflow-hidden">
+                <div className="relative h-full md:h-[90vh] overflow-hidden">
                   {/* Background Image */}
                   <div
                     className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -196,7 +196,7 @@ const Hero = () => {
 
         {/* Small Bottom Right Slider */}
         <motion.div
-          className="absolute bottom-10 right-4 z-30 w-72 sm:w-80 h-28 sm:h-32 hidden md:block"
+          className="absolute bottom-10 right-0 z-30 w-72 sm:w-80 h-28 sm:h-32 hidden md:block mx-20"
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, delay: 1 }}
@@ -218,7 +218,7 @@ const Hero = () => {
           >
             {newsDataMini.slice(0, 6).map((news, index) => (
               <SwiperSlide key={`small-${news.id}`}>
-                <div className="relative h-28 sm:h-32 overflow-hidden cursor-pointer group">
+                <div className="relative h-28 sm:h-32 cursor-pointer group">
                   {/* Background Image */}
                   <div
                     className="absolute inset-0 bg-cover bg-center bg-no-repeat transform scale-110 group-hover:scale-100 transition-transform duration-500"

@@ -479,7 +479,7 @@ export const HeroScrollVideo: React.FC<HeroScrollVideoProps> = ({
 
       {/* Sticky scroll section */}
       <div
-        className="hsv-scroll"
+        className="hsv-scroll py-5"
         data-sticky-scroll
         style={{ height: `${Math.max(150, scrollHeightVh)}vh` }}
       >
@@ -544,7 +544,7 @@ export const HeroScrollVideo: React.FC<HeroScrollVideoProps> = ({
         }
 
         .hsv-container {
-          height: 40vh;
+          height: 100vh;
           display: grid;
           place-items: center;
           padding: clamp(16px, 3vw, 40px);

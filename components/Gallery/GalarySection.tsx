@@ -37,14 +37,14 @@ const GallerySection = () => {
   };
 
   return (
-    <section className="py-20 relative overflow-hidden bg-black">
+    <section className="py-10 relative overflow-hidden bg-transparent">
       {/* Background Effects */}
       <div className="absolute inset-0">
         <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-red-500/5 rounded-full blur-3xl"></div>
         <div className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-gold/5 rounded-full blur-3xl"></div>
       </div>
 
-      <div className="container mx-auto px-4 relative z-10">
+      <div className=" relative z-10">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -53,7 +53,7 @@ const GallerySection = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-[24px] md:text-[36px] font-poppins font-bold text-white mb-6">
+          <h2 className="text-[24px] md:text-[36px] font-poppins font-bold text-white mb-6 leading-none">
             Controversies We Have Handled
           </h2>
 
