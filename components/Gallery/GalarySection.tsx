@@ -44,7 +44,7 @@ const GallerySection = () => {
         <div className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-gold/5 rounded-full blur-3xl"></div>
       </div>
 
-      <div className=" relative z-10">
+      <div className="relative z-10">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}

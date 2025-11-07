@@ -7,7 +7,7 @@ import { CanvasRevealEffect } from "@/components/FightForWorkers/canvas-reveal-e
 function FightForWorkers() {
   return (
     <>
-      <div className="bg-white dark:bg-black text-center py-10 px-20">
+      <div className="bg-white dark:bg-black text-center py-10 md:px-20 px-6">
         <div className="mb-10">
           <h2 className="text-4xl mb-2 text-[#EDD8B5]">
             We Fight for cine workers

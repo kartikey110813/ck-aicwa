@@ -170,7 +170,7 @@ const NationwideFootprint = () => {
     >
       <div className="w-full mx-auto font-poppins">
         {/* Dark background container */}
-        <div className="rounded-lg px-6 sm:px-8 lg:px-20 py-8 lg:py-10 min-h-[450px]">
+        <div className="rounded-lg px-6 sm:px-8 lg:px-20 py-10 min-h-[450px]">
           <div className="flex flex-col-reverse justify-between lg:flex-row gap-8 lg:gap-12 items-start lg:items-stretch">
             {/* Left Column - States List */}
             <div className="w-full lg:w-1/2 flex flex-col items-start justify-between text-left">
