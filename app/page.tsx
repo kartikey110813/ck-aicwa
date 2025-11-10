@@ -1,13 +1,13 @@
-import AicwaVideo from "@/components/AicwaVideo";
-import { FightForWorkers } from "@/components/FightForWorkers/FightForWorkers";
-import GallerySection from "@/components/Gallery/GalarySection";
-import { GalleryNew } from "@/components/Gallery/GalleryNew";
+import AicwaVideo from "@/components/Home/AicwaVideo";
+import { FightForWorkers } from "@/components/Home/FightForWorkers/FightForWorkers";
+import { GalleryNew } from "@/components/Home/Gallery/GalleryNew";
 import Hero from "@/components/Home/Hero";
-import MembershipBenefits from "@/components/MembershipBenefits/MembershipBenefits";
-import MembershipBenefitsMobile from "@/components/MembershipBenefits/MembershipBenefitsMobile";
+import MembershipBenefits from "@/components/Home/MembershipBenefits/MembershipBenefits";
+import MembershipBenefitsMobile from "@/components/Home/MembershipBenefits/MembershipBenefitsMobile";
 import Navbar from "@/components/Navbar/Navbar";
-import RenewMember from "@/components/RenewMember";
-import StateRepresentation from "@/components/StateRepresentation";
+import StateRepresentation from "@/components/Home/StateRepresentation";
+import NewsArticles from "@/components/Home/NewsArticles";
+import FollowOurJourney from "@/components/Home/FollowOurJourney";
 
 export default function HomePage() {
   return (
@@ -16,11 +16,13 @@ export default function HomePage() {
       <Hero />
       {/* <RenewMember /> */}
       <MembershipBenefits />
-      <MembershipBenefitsMobile/>
+      <MembershipBenefitsMobile />
       <GalleryNew />
       <AicwaVideo />
       <FightForWorkers />
       <StateRepresentation />
+      <NewsArticles />
+      <FollowOurJourney />
     </main>
   );
 }

@@ -3,9 +3,8 @@
 import React, { useRef, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay, Parallax } from "swiper/modules";
+import { Autoplay } from "swiper/modules";
 import { gsap } from "gsap";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 
 // Import Swiper styles
 import "swiper/css";
@@ -137,7 +136,7 @@ const Hero = () => {
                         initial={{ y: 50, opacity: 0 }}
                         whileInView={{ y: 0, opacity: 1 }}
                         transition={{ duration: 0.8, delay: 0.3 }}
-                        className="text-2xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight md:w-[50%]"
+                        className="text-2xl md:text-5xl lg:text-6xl text-white mb-6 leading-tight md:w-[50%]"
                         data-swiper-parallax="-200"
                       >
                         {news.title}

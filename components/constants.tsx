@@ -13,11 +13,10 @@ interface NewsItem {
 export const newsData: NewsItem[] = [
   {
     id: 1,
-    title: "Revolutionary AI Technology Transforms Healthcare Industry",
+    title: "AICWA: The Voice of India's Cine Workers",
     excerpt:
       "Breakthrough artificial intelligence system promises to revolutionize medical diagnosis and treatment planning.",
-    content:
-      "A groundbreaking AI technology has been developed that can analyze medical images with unprecedented accuracy, potentially saving millions of lives worldwide.",
+    content: "AICWA: The Voice of India's Cine Workers",
     author: "Dr. Sarah Johnson",
     date: "2024-01-15",
     category: "Technology",
@@ -25,62 +24,6 @@ export const newsData: NewsItem[] = [
       "https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
     featured: true,
   },
-  // {
-  //   id: 2,
-  //   title: "Climate Change Summit Reaches Historic Agreement",
-  //   excerpt:
-  //     "World leaders unite to combat climate change with ambitious new environmental policies and renewable energy initiatives.",
-  //   content:
-  //     "The global climate summit concluded with a historic agreement that sets new targets for carbon reduction and renewable energy adoption.",
-  //   author: "Environmental Reporter",
-  //   date: "2024-01-12",
-  //   category: "Environment",
-  //   image:
-  //     "https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-  //   featured: true,
-  // },
-  // {
-  //   id: 3,
-  //   title: "Space Exploration Reaches New Milestone",
-  //   excerpt:
-  //     "Successful Mars mission opens new possibilities for human colonization and scientific discovery.",
-  //   content:
-  //     "The latest Mars exploration mission has successfully landed and begun transmitting data that could reshape our understanding of the red planet.",
-  //   author: "Space Correspondent",
-  //   date: "2024-01-10",
-  //   category: "Science",
-  //   image:
-  //     "https://images.unsplash.com/photo-1446776877081-d282a0f896e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80",
-  //   featured: true,
-  // },
-  // {
-  //   id: 4,
-  //   title: "Economic Recovery Shows Strong Growth Signals",
-  //   excerpt:
-  //     "Global markets demonstrate resilience with record-breaking growth in key sectors and emerging technologies.",
-  //   content:
-  //     "Economic indicators show promising signs of recovery with technology and green energy sectors leading the way.",
-  //   author: "Economic Analyst",
-  //   date: "2024-01-08",
-  //   category: "Economy",
-  //   image:
-  //     "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-  //   featured: true,
-  // },
-  // {
-  //   id: 5,
-  //   title: "Breakthrough in Quantum Computing Achieved",
-  //   excerpt:
-  //     "Scientists achieve quantum supremacy milestone that could revolutionize computing and cryptography.",
-  //   content:
-  //     "A major breakthrough in quantum computing has been achieved, bringing us closer to practical quantum applications.",
-  //   author: "Tech Reporter",
-  //   date: "2024-01-05",
-  //   category: "Technology",
-  //   image:
-  //     "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-  //   featured: true,
-  // },
 ];
 export const newsDataMini: NewsItem[] = [
   {
@@ -551,5 +494,38 @@ export const staticTestData = [
         city: "Hanumangarh",
       },
     ],
+  },
+];
+
+export const articles = [
+  {
+    id: 1,
+    title:
+      "Meeting with hon Shri Gurudas Kamat [Former Home & Telecommunication Minister of India]",
+    date: "8 December 2021",
+    comments: "2 comments",
+    image: "/article-1.jpg", // Replace with real image path
+    description:
+      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+  },
+  {
+    id: 2,
+    title:
+      "Meeting with hon Shri Amit Deshmukh [Cultural Minister – Maharashtra state]",
+    date: "8 December 2021",
+    comments: "2 comments",
+    image: "/article-2.jpg",
+    description:
+      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+  },
+  {
+    id: 3,
+    title:
+      "Meeting with hon Shri Amit Deshmukh [Cultural Minister – Maharashtra state]",
+    date: "8 December 2021",
+    comments: "2 comments",
+    image: "/article-3.jpg",
+    description:
+      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
   },
 ];
