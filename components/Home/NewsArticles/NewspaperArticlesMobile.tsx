@@ -1,26 +1,14 @@
 import { articles } from "@/components/constants";
-import { Calendar, MessageSquare, MessageSquareMore } from "lucide-react";
+import { Calendar, MessageSquareMore } from "lucide-react";
 import React from "react";
 
-const NewspaperArticles: React.FC = () => {
+const NewspaperArticlesMobile = () => {
   return (
-    <section className="text-[#fff2e7] min-h-screen px-20 hidden md:block">
+    <section className="text-[#fff2e7] min-h-screen px-6 block md:hidden">
       {/* Gallery Grid */}
-      <div
-        className="grid gap-6 md:gap-8"
-        style={{
-          gridTemplateColumns: "repeat(3, minmax(0, 1fr))",
-          gridAutoRows: "minmax(120px, auto)",
-          gridTemplateAreas: `
-            "left featured right"
-            "left featured right"
-            "left featured right"
-            "left featured right"
-          `,
-        }}
-      >
+      <div className="">
         {/* Left small articles */}
-        <div className="flex flex-col gap-6" style={{ gridArea: "left" }}>
+        <div className="flex flex-col gap-6 mb-6">
           {articles
             .filter((a) => !a.isFeatured)
             .slice(0, Math.ceil((articles.length - 1) / 2))
@@ -41,7 +29,7 @@ const NewspaperArticles: React.FC = () => {
                     <button
                       aria-label="Play video"
                       className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2
-                      bg-white/80 rounded-full p-3 hover:bg-white transition"
+                    bg-white/80 rounded-full p-3 hover:bg-white transition"
                     >
                       <svg
                         className="w-6 h-6 text-[#711418]"
@@ -79,8 +67,7 @@ const NewspaperArticles: React.FC = () => {
           .map((article) => (
             <article
               key={article.id}
-              className="bg-[#fff2e7] text-[#381d12] border border-[#b6a492] rounded-[11px] relative flex flex-col overflow-hidden p-4"
-              style={{ gridArea: "featured" }}
+              className="bg-[#fff2e7] text-[#381d12] border border-[#b6a492] rounded-[11px] relative flex flex-col overflow-hidden p-4 mb-6"
             >
               <div className="relative rounded-[11px] overflow-hidden flex-shrink-0">
                 {article.imageUrl && (
@@ -94,7 +81,7 @@ const NewspaperArticles: React.FC = () => {
                   <button
                     aria-label="Play video"
                     className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2
-                      bg-white/80 rounded-full p-3 hover:bg-white transition"
+                    bg-white/80 rounded-full p-3 hover:bg-white transition"
                   >
                     <svg
                       className="w-6 h-6 text-[#711418]"
@@ -126,7 +113,7 @@ const NewspaperArticles: React.FC = () => {
           ))}
 
         {/* Right small articles */}
-        <div className="flex flex-col gap-6" style={{ gridArea: "right" }}>
+        <div className="flex flex-col gap-6">
           {articles
             .filter((a) => !a.isFeatured)
             .slice(Math.ceil((articles.length - 1) / 2))
@@ -147,7 +134,7 @@ const NewspaperArticles: React.FC = () => {
                     <button
                       aria-label="Play video"
                       className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2
-                      bg-white/80 rounded-full p-3 hover:bg-white transition"
+                    bg-white/80 rounded-full p-3 hover:bg-white transition"
                     >
                       <svg
                         className="w-6 h-6 text-[#711418]"
@@ -180,21 +167,9 @@ const NewspaperArticles: React.FC = () => {
         </div>
       </div>
       <br />
-      <div
-        className="grid gap-6 md:gap-8"
-        style={{
-          gridTemplateColumns: "repeat(3, minmax(0, 1fr))",
-          gridAutoRows: "minmax(120px, auto)",
-          gridTemplateAreas: `
-            "left featured right"
-            "left featured right"
-            "left featured right"
-            "left featured right"
-          `,
-        }}
-      >
+      <div className="">
         {/* Left small articles */}
-        <div className="flex flex-col gap-6" style={{ gridArea: "left" }}>
+        <div className="flex flex-col gap-6 mb-6">
           {articles
             .filter((a) => !a.isFeatured)
             .slice(0, Math.ceil((articles.length - 1) / 2))
@@ -215,7 +190,7 @@ const NewspaperArticles: React.FC = () => {
                     <button
                       aria-label="Play video"
                       className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2
-                      bg-white/80 rounded-full p-3 hover:bg-white transition"
+                    bg-white/80 rounded-full p-3 hover:bg-white transition"
                     >
                       <svg
                         className="w-6 h-6 text-[#711418]"
@@ -253,8 +228,7 @@ const NewspaperArticles: React.FC = () => {
           .map((article) => (
             <article
               key={article.id}
-              className="bg-[#fff2e7] text-[#381d12] border border-[#b6a492] rounded-[11px] relative flex flex-col overflow-hidden p-4"
-              style={{ gridArea: "featured" }}
+              className="bg-[#fff2e7] text-[#381d12] border border-[#b6a492] rounded-[11px] relative flex flex-col overflow-hidden p-4 mb-6"
             >
               <div className="relative rounded-[11px] overflow-hidden flex-shrink-0">
                 {article.imageUrl && (
@@ -268,7 +242,7 @@ const NewspaperArticles: React.FC = () => {
                   <button
                     aria-label="Play video"
                     className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2
-                      bg-white/80 rounded-full p-3 hover:bg-white transition"
+                    bg-white/80 rounded-full p-3 hover:bg-white transition"
                   >
                     <svg
                       className="w-6 h-6 text-[#711418]"
@@ -300,7 +274,7 @@ const NewspaperArticles: React.FC = () => {
           ))}
 
         {/* Right small articles */}
-        <div className="flex flex-col gap-6" style={{ gridArea: "right" }}>
+        <div className="flex flex-col gap-6">
           {articles
             .filter((a) => !a.isFeatured)
             .slice(Math.ceil((articles.length - 1) / 2))
@@ -321,7 +295,7 @@ const NewspaperArticles: React.FC = () => {
                     <button
                       aria-label="Play video"
                       className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2
-                      bg-white/80 rounded-full p-3 hover:bg-white transition"
+                    bg-white/80 rounded-full p-3 hover:bg-white transition"
                     >
                       <svg
                         className="w-6 h-6 text-[#711418]"
@@ -357,4 +331,4 @@ const NewspaperArticles: React.FC = () => {
   );
 };
 
-export default NewspaperArticles;
+export default NewspaperArticlesMobile;

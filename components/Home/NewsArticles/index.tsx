@@ -3,12 +3,12 @@
 import React, { useState } from "react";
 import VideoArticles from "./VideoArticles";
 import NewspaperArticles from "./NewspaperArticles";
+import NewspaperArticlesMobile from "./NewspaperArticlesMobile";
 
 const NewsArticles = () => {
   const [activeTab, setActiveTab] = useState<"video" | "newspaper">(
     "newspaper"
   );
-
   return (
     <section className="bg-[#6b0c0f] text-center py-10">
       <h2 className="text-[46px] text-white mb-2">
@@ -47,7 +47,14 @@ const NewsArticles = () => {
       </div>
 
       {/* Conditional Components */}
-      {activeTab === "video" ? <VideoArticles /> : <NewspaperArticles />}
+      {activeTab === "video" ? (
+        <VideoArticles />
+      ) : (
+        <>
+          <NewspaperArticlesMobile />
+          <NewspaperArticles />
+        </>
+      )}
     </section>
   );
 };

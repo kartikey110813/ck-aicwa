@@ -15,7 +15,7 @@ const testimonialsData: TestimonialType[] = [
   {
     id: 1,
     title: "Best Farming",
-    text: "I will really like to rate you 5 stars from the bottom of my heart. It is a long established fact that a reader will be distracted by readable content when looking at its layout.",
+    text: "I will really like to rate you 5 stars from the bottom of my heart. It is a long established fact that a reader will be distracted.",
     name: "Ridheema Tiwari",
     role: "Actress",
     image:
@@ -25,7 +25,7 @@ const testimonialsData: TestimonialType[] = [
   {
     id: 2,
     title: "Amazing Experience",
-    text: "The service was wonderful and exceeded my expectations. I’ll recommend it to everyone. Truly amazing experience from start to finish!",
+    text: "The service was wonderful and exceeded my expectations. I'll recommend it to everyone. Truly amazing experience from start to finish!",
     name: "Arjun Mehta",
     role: "Entrepreneur",
     image:
@@ -35,7 +35,7 @@ const testimonialsData: TestimonialType[] = [
   {
     id: 3,
     title: "Great Support",
-    text: "They have a fantastic support team. Everything was handled smoothly, and I’m really happy with how it turned out. Definitely worth 5 stars!",
+    text: "They have a fantastic support team. Everything was handled smoothly, and I'm really happy with how it turned out. Definitely worth 5 stars!",
     name: "Priya Sharma",
     role: "Designer",
     image:
@@ -77,7 +77,7 @@ const Testimonials: React.FC = () => {
           <img
             src="/testimonials.png"
             alt="Testimonials visual"
-            className="w-full h-full object-contain rounded-[20px]"
+            className="w-full object-contain rounded-[20px]"
           />
         </div>
 
@@ -85,7 +85,7 @@ const Testimonials: React.FC = () => {
         <div className="space-y-8 relative">
           <div>
             <p className="text-[#690714] font-semibold text-lg mb-2">
-              Testimonial
+              Testimonials
             </p>
             <h2 className="text-5xl font-bold text-gray-900 mb-6">
               What people say

@@ -19,7 +19,8 @@ const FollowOurJourney = () => {
       id: "facebook",
       icon: Facebook,
       color: "#1877F2",
-      bgColor: "bg-blue-500",
+      borderColor: "border-blue-500",
+      textColor: "text-blue-500",
       label: "Facebook",
       followers: "15.2K",
     },
@@ -27,7 +28,8 @@ const FollowOurJourney = () => {
       id: "instagram",
       icon: Instagram,
       color: "#E4405F",
-      bgColor: "bg-pink-500",
+      borderColor: "border-pink-500",
+      textColor: "text-pink-500",
       label: "Instagram",
       followers: "23.8K",
     },
@@ -35,7 +37,8 @@ const FollowOurJourney = () => {
       id: "twitter",
       icon: Twitter,
       color: "#1DA1F2",
-      bgColor: "bg-sky-500",
+      borderColor: "border-sky-500",
+      textColor: "text-sky-500",
       label: "Twitter",
       followers: "18.5K",
     },
@@ -43,7 +46,8 @@ const FollowOurJourney = () => {
       id: "linkedin",
       icon: Linkedin,
       color: "#0077B5",
-      bgColor: "bg-blue-600",
+      borderColor: "border-blue-600",
+      textColor: "text-blue-600",
       label: "LinkedIn",
       followers: "12.3K",
     },
@@ -51,7 +55,8 @@ const FollowOurJourney = () => {
       id: "whatsapp",
       icon: MessageCircle,
       color: "#25D366",
-      bgColor: "bg-green-500",
+      borderColor: "border-green-500",
+      textColor: "text-green-500",
       label: "WhatsApp",
       followers: "Direct",
     },
@@ -59,14 +64,15 @@ const FollowOurJourney = () => {
       id: "website",
       icon: Globe,
       color: "#6A1319",
-      bgColor: "bg-red-800",
+      borderColor: "border-red-800",
+      textColor: "text-red-800",
       label: "Website",
       followers: "Official",
     },
   ];
   return (
     <section
-      className="relative overflow-hidden"
+      className="relative overflow-hidden py-10"
       style={{ backgroundColor: "#EDD8B5" }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
@@ -75,7 +81,6 @@ const FollowOurJourney = () => {
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
             className="space-y-8 order-2 lg:order-1"
           >
             {/* Header */}
@@ -83,7 +88,6 @@ const FollowOurJourney = () => {
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
                 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#6A1319] leading-tight"
               >
                 Follow Our Journey
@@ -92,7 +96,6 @@ const FollowOurJourney = () => {
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
                 className="text-lg sm:text-xl text-[#6A1319] opacity-80 leading-relaxed max-w-lg"
               >
                 All Indian Cine Workers Association (AICWA) is the only
@@ -105,7 +108,6 @@ const FollowOurJourney = () => {
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
               className="flex flex-wrap gap-4"
             >
               {socialLinks.map((social, index) => (
@@ -114,14 +116,13 @@ const FollowOurJourney = () => {
                   href="#"
                   initial={{ opacity: 0, scale: 0 }}
                   whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 + 0.5 }}
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
                   //   onMouseEnter={() => setHoveredIcon(social.id)}
                   //   onMouseLeave={() => setHoveredIcon(null)}
-                  className={`relative group w-14 h-14 ${social.bgColor} rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300`}
+                  className={`relative group w-14 h-14 border-[1px] ${social.borderColor} rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300`}
                 >
-                  <social.icon className="w-7 h-7 text-white" />
+                  <social.icon className={`w-7 h-7 ${social.textColor}`} />
 
                   {/* Tooltip */}
                   {/* <AnimatePresence>
@@ -151,7 +152,6 @@ const FollowOurJourney = () => {
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
             className="relative order-1 lg:order-2"
           >
             <div className="relative">
@@ -159,7 +159,6 @@ const FollowOurJourney = () => {
               <motion.div
                 initial={{ scale: 0 }}
                 whileInView={{ scale: 1 }}
-                transition={{ duration: 0.8, delay: 0.4 }}
                 className="absolute inset-0 flex items-end justify-end"
               >
                 <div className="w-80 h-80 sm:w-96 sm:h-96 lg:w-[450px] lg:h-[450px] bg-gradient-to-br from-orange-400 to-orange-500 rounded-full shadow-2xl"></div>
@@ -169,7 +168,6 @@ const FollowOurJourney = () => {
               <motion.div
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.6 }}
                 className="relative z-10 flex items-end justify-center h-96 sm:h-[450px] lg:h-[500px]"
               >
                 <img

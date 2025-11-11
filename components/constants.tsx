@@ -497,35 +497,75 @@ export const staticTestData = [
   },
 ];
 
-export const articles = [
+interface Article {
+  id: number;
+  title: string;
+  date: string;
+  comments: number;
+  description: string;
+  imageUrl: string;
+  isVideo?: boolean;
+  isFeatured?: boolean;
+}
+
+export const articles: Article[] = [
   {
     id: 1,
     title:
       "Meeting with hon Shri Gurudas Kamat [Former Home & Telecommunication Minister of India]",
     date: "8 December 2021",
-    comments: "2 comments",
-    image: "/article-1.jpg", // Replace with real image path
+    comments: 2,
     description:
       "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+    imageUrl:
+      "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=600&q=80",
+    isVideo: true,
+    isFeatured: true,
   },
   {
     id: 2,
     title:
       "Meeting with hon Shri Amit Deshmukh [Cultural Minister – Maharashtra state]",
     date: "8 December 2021",
-    comments: "2 comments",
-    image: "/article-2.jpg",
+    comments: 2,
     description:
-      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+      "It is a long established fact that a reader will be distracted by the readable content.",
+    imageUrl:
+      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80",
+    isVideo: true,
   },
   {
     id: 3,
     title:
       "Meeting with hon Shri Amit Deshmukh [Cultural Minister – Maharashtra state]",
     date: "8 December 2021",
-    comments: "2 comments",
-    image: "/article-3.jpg",
+    comments: 2,
     description:
-      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+      "It is a long established fact that a reader will be distracted by the readable content.",
+    imageUrl: "",
+    isVideo: false,
+  },
+  {
+    id: 4,
+    title:
+      "Meeting with hon Shri Amit Deshmukh [Cultural Minister – Maharashtra state]",
+    date: "8 December 2021",
+    comments: 2,
+    description:
+      "It is a long established fact that a reader will be distracted by the readable content.",
+    imageUrl: "",
+    isVideo: false,
+  },
+  {
+    id: 5,
+    title:
+      "Meeting with hon Shri Amit Deshmukh [Cultural Minister – Maharashtra state]",
+    date: "8 December 2021",
+    comments: 2,
+    description:
+      "It is a long established fact that a reader will be distracted by the readable content.",
+    imageUrl:
+      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80",
+    isVideo: true,
   },
 ];
