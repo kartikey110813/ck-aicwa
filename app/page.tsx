@@ -8,6 +8,7 @@ import Navbar from "@/components/Navbar/Navbar";
 import StateRepresentation from "@/components/Home/StateRepresentation";
 import NewsArticles from "@/components/Home/NewsArticles";
 import FollowOurJourney from "@/components/Home/FollowOurJourney";
+import Testimonials from "@/components/Home/Testimonials";
 
 export default function HomePage() {
   return (
@@ -22,6 +23,7 @@ export default function HomePage() {
       <FightForWorkers />
       <StateRepresentation />
       <NewsArticles />
+      <Testimonials />
       <FollowOurJourney />
     </main>
   );
