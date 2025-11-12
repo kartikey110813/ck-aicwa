@@ -16,11 +16,12 @@ export default function HomePage() {
     <main id="top">
       <Navbar />
       <Hero />
+      <AicwaVideo />
       {/* <RenewMember /> */}
       <MembershipBenefits />
       <MembershipBenefitsMobile />
       <GalleryNew />
-      <AicwaVideo />
+
       <FightForWorkers />
       <StateRepresentation />
       <NewsArticles />

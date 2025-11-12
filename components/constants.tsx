@@ -13,9 +13,8 @@ interface NewsItem {
 export const newsData: NewsItem[] = [
   {
     id: 1,
-    title: "AICWA: The Voice of India's Cine Workers",
-    excerpt:
-      "Breakthrough artificial intelligence system promises to revolutionize medical diagnosis and treatment planning.",
+    title: "The Voice of India's Cine Workers",
+    excerpt: "AICWA",
     content: "AICWA: The Voice of India's Cine Workers",
     author: "Dr. Sarah Johnson",
     date: "2024-01-15",
@@ -260,9 +259,9 @@ export interface Benefit {
 export const benefits: Benefit[] = [
   {
     id: 1,
-    title: "Health and pension/retirement",
+    title: "Directors",
     description:
-      "Members earn credits toward retirement and health care each time they work.",
+      "AICWA supports directors in ensuring fair credit, contractual transparency, and creative rights protection in every production.",
     highlightColor: "#f3e1ba",
     cardImage: "/MemCard.png",
     stats: [
@@ -272,9 +271,9 @@ export const benefits: Benefit[] = [
   },
   {
     id: 2,
-    title: "Contracts/collective bargaining",
+    title: "Actors & Performers",
     description:
-      "AICWA ensures fair contracts, transparent payments, and collective representation for all cine workers.",
+      "We help actors fight issues of harassment, delayed payments, and unsafe shooting conditions through legal and union support.",
     highlightColor: "#ffdad4",
     cardImage: "/MemCard.png",
     stats: [
@@ -284,9 +283,9 @@ export const benefits: Benefit[] = [
   },
   {
     id: 3,
-    title: "Resources to organize non-union work",
+    title: "Musicians & Singers",
     description:
-      "AICWA provides education, tools, and guidance to organize independent and non-unionized work safely.",
+      "Protecting the royalty, recognition, and fair compensation of every music professional in the film industry.",
     highlightColor: "#fff2e0",
     cardImage: "/MemCard.png",
     stats: [
@@ -296,9 +295,9 @@ export const benefits: Benefit[] = [
   },
   {
     id: 4,
-    title: "Skill Development & Training",
+    title: "Stuntmen & Action Crew",
     description:
-      "Members get access to continuous learning workshops and certifications.",
+      "Ensuring insurance, medical safety, and legal protection for stunt professionals facing high-risk working environments.",
     highlightColor: "#ffe0e0",
     cardImage: "/MemCard.png",
     stats: [
@@ -308,9 +307,9 @@ export const benefits: Benefit[] = [
   },
   {
     id: 5,
-    title: "Legal & Financial Aid",
+    title: "Technicians & Camera Crew",
     description:
-      "AICWA provides free legal counseling and financial aid in disputes or emergencies.",
+      "AICWA stands for the rights of behind-the-scenes professionals, fighting for job security, timely wages, and safe work hours.",
     highlightColor: "#e0f7fa",
     cardImage: "/MemCard.png",
     stats: [
@@ -320,9 +319,21 @@ export const benefits: Benefit[] = [
   },
   {
     id: 6,
-    title: "Safety & Wellbeing",
+    title: "Production & Ground Staff",
     description:
-      "Ensuring safe and ethical working conditions across all production units.",
+      "We safeguard the interests of on-set workers, ensuring fair wages, humane treatment, and grievance redressal for every crew member.",
+    highlightColor: "#fff2e7",
+    cardImage: "/MemCard.png",
+    stats: [
+      { label: "Get My Card Now", value: 2356, icon: "👷‍♂️" },
+      { label: "Renew My Card", value: 4563, icon: "🤝" },
+    ],
+  },
+  {
+    id: 7,
+    title: "Producers & Coordinators",
+    description:
+      "Guiding producers to maintain lawful, ethical, and worker-friendly production practices under AICWA’s code of conduct.",
     highlightColor: "#fff2e7",
     cardImage: "/MemCard.png",
     stats: [

@@ -19,7 +19,7 @@ const MembershipBenefits = () => {
   });
 
   // Create a smooth upward scroll effect for cards
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "-50%"]);
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "-80%"]);
 
   return (
     <section

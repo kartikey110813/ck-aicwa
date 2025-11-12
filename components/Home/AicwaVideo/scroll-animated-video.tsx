@@ -100,7 +100,7 @@ export const HeroScrollVideo: React.FC<HeroScrollVideoProps> = ({
   credits = (
     <>
       <p>Started by</p>
-      <p>Scott Clayton</p>
+      <p>Shri. Suresh Shyamlal Gupta</p>
     </>
   ),
 
@@ -569,7 +569,7 @@ export const HeroScrollVideo: React.FC<HeroScrollVideoProps> = ({
           font-weight: 900;
           letter-spacing: -0.02em;
           text-wrap: balance;
-          background: linear-gradient(90deg, var(--text) 0%, var(--text) 50%, var(--accent) 100%);
+          background: linear-gradient(90deg, #EDD8B5 0%, #EDD8B5 50%, #6b0c0f 100%);
           -webkit-background-clip: text;
           background-clip: text;
           color: transparent;
@@ -603,7 +603,7 @@ export const HeroScrollVideo: React.FC<HeroScrollVideoProps> = ({
           width: 8px;
           height: 8px;
           border-radius: 999px;
-          background: linear-gradient(135deg, var(--accent), var(--accent-2));
+          background: linear-gradient(135deg,rgb(243, 206, 143), #EDD8B5);
           display: inline-block;
         }
         .hsv-credits {
@@ -643,6 +643,7 @@ export const HeroScrollVideo: React.FC<HeroScrollVideoProps> = ({
           background: var(--overlay-bg);
           color: var(--overlay-text);
           display: flex;
+          justify-content:center;
           flex-direction: column;
           align-items: center;
           text-align: center;
@@ -657,8 +658,8 @@ export const HeroScrollVideo: React.FC<HeroScrollVideoProps> = ({
           font-size: 0.85rem;
           text-transform: uppercase;
           letter-spacing: 0.14em;
-          position: absolute;
-          top: clamp(8px, 3vw, 24px);
+          // position: absolute;
+          // top: clamp(8px, 3vw, 24px);
           left: 0;
           width: 100%;
           text-align: center;
@@ -677,7 +678,7 @@ export const HeroScrollVideo: React.FC<HeroScrollVideoProps> = ({
           margin: 0;
           font-weight: 900;
           letter-spacing: -0.01em;
-          background: linear-gradient(90deg, #fff 0%, #fff 40%, var(--accent-2) 100%);
+          background: linear-gradient(90deg, #fff 0%, #fff 40%, #EDD8B5 100%);
           -webkit-background-clip: text;
           background-clip: text;
           color: transparent;
@@ -691,7 +692,7 @@ export const HeroScrollVideo: React.FC<HeroScrollVideoProps> = ({
           height: 3px;
           border-radius: 999px;
           margin: 10px auto 0 auto;
-          background: linear-gradient(90deg, var(--accent), var(--accent-2));
+          background: linear-gradient(90deg,rgb(239, 189, 102), #EDD8B5);
           opacity: 0.9;
         }
         .hsv-overlay-content p {

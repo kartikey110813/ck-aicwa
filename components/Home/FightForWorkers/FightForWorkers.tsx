@@ -10,7 +10,7 @@ function FightForWorkers() {
       <div className="bg-white dark:bg-black text-center py-10 md:px-20 px-6">
         <div className="mb-10">
           <h2 className="text-4xl mb-2 text-[#EDD8B5]">
-            We Fight for cine workers
+            4 Pillars of AICWA
           </h2>
           <p className="text-[#CF0E27]">
             AICWA will draft a justice pathway against the injustice you have
