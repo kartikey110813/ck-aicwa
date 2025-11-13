@@ -11,6 +11,7 @@ import FollowOurJourney from "@/components/Home/FollowOurJourney";
 import Testimonials from "@/components/Home/Testimonials";
 import Footer from "@/components/Footer";
 import Statistics from "@/components/Home/Statistics";
+import HoverFooter from "@/components/Footer/main";
 
 export default function HomePage() {
   return (
@@ -29,7 +30,7 @@ export default function HomePage() {
       <NewsArticles />
       <Testimonials />
       <FollowOurJourney />
-      <Footer />
+      <HoverFooter />
     </main>
   );
 }
