@@ -10,7 +10,7 @@ const NewsArticles = () => {
     "newspaper"
   );
   return (
-    <section className="bg-[#6b0c0f] text-center py-10">
+    <section className="bg-[#6b0c0f] text-center py-10 min-h-[100vh]">
       <h2 className="text-[46px] text-white mb-2">{"Voice & Views"}</h2>
       <p className="text-[#f5d9c0] text-[20px] mb-8 max-w-2xl mx-auto">
         AICWA in Action — Advocating Justice, Amplifying Voices.

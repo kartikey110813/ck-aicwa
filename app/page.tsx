@@ -10,6 +10,7 @@ import NewsArticles from "@/components/Home/NewsArticles";
 import FollowOurJourney from "@/components/Home/FollowOurJourney";
 import Testimonials from "@/components/Home/Testimonials";
 import Footer from "@/components/Footer";
+import Statistics from "@/components/Home/Statistics";
 
 export default function HomePage() {
   return (
@@ -18,6 +19,7 @@ export default function HomePage() {
       <Hero />
       <AicwaVideo />
       {/* <RenewMember /> */}
+      <Statistics />
       <MembershipBenefits />
       <MembershipBenefitsMobile />
       <GalleryNew />

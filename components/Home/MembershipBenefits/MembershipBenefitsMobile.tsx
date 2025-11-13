@@ -26,7 +26,7 @@ const MembershipBenefitsMobile = () => {
   return (
     <section
       ref={containerRef}
-      className="relative h-[400vh] bg-[#EDD8B5] md:hidden flex flex-col"
+      className="relative h-[400vh] bg-[#EDD8B5] lg:hidden flex flex-col"
     >
       {/* Sticky content wrapper */}
       <div className="sticky top-0 h-screen flex flex-col overflow-hidden py-10">

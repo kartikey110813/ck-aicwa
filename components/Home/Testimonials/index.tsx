@@ -1,4 +1,5 @@
 "use client";
+import { motion, AnimatePresence } from "framer-motion";
 import React, { useEffect, useState } from "react";
 
 interface TestimonialType {
@@ -97,33 +98,50 @@ const Testimonials: React.FC = () => {
 
           {/* Quote Box */}
           <div className="relative transition-all duration-700 ease-in-out">
-            <div className="border-2 border-[#690714] p-8 relative bg-white rounded-xl shadow-md">
-              {/* Large Quote Mark */}
-              <div className="absolute -top-2 -right-0 text-[#690714] text-8xl font-bold leading-none">
-                ❝
-              </div>
+            {/* Animated Quote Box */}
+            <div className="relative">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={t.id} // triggers re-animation on change
+                  initial={{ y: -80, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  exit={{ y: 80, opacity: 0 }}
+                  transition={{
+                    duration: 0.8,
+                    ease: "easeOut",
+                  }}
+                  className="border-2 border-[#690714] p-8 relative bg-white rounded-xl shadow-md"
+                >
+                  {/* Large Quote Mark */}
+                  <div className="absolute -top-2 -right-0 text-[#690714] text-8xl font-bold leading-none">
+                    ❝
+                  </div>
 
-              {/* Stars + Title */}
-              <div className="flex items-center gap-3 mb-4">
-                <div className="flex gap-1">
-                  {[...Array(t.rating)].map((_, i) => (
-                    <svg
-                      key={i}
-                      className="w-5 h-5 fill-[#690714]"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                    </svg>
-                  ))}
-                </div>
-                <span className="font-bold text-gray-900">{t.title}</span>
-              </div>
+                  {/* Stars + Title */}
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="flex gap-1">
+                      {[...Array(t.rating)].map((_, i) => (
+                        <svg
+                          key={i}
+                          className="w-5 h-5 fill-[#690714]"
+                          viewBox="0 0 24 24"
+                        >
+                          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                        </svg>
+                      ))}
+                    </div>
+                    <span className="font-bold text-gray-900">{t.title}</span>
+                  </div>
 
-              {/* Text */}
-              <p className="text-[#666666] italic leading-relaxed">{t.text}</p>
+                  {/* Text */}
+                  <p className="text-[#666666] italic leading-relaxed">
+                    {t.text}
+                  </p>
 
-              {/* Arrow pointer */}
-              <div className="absolute -bottom-6 left-20 w-0 h-0 border-l-[20px] border-l-transparent border-r-[20px] border-r-transparent border-t-[24px] border-t-[#690714]"></div>
+                  {/* Arrow pointer */}
+                  <div className="absolute -bottom-6 left-20 w-0 h-0 border-l-[20px] border-l-transparent border-r-[20px] border-r-transparent border-t-[24px] border-t-[#690714]"></div>
+                </motion.div>
+              </AnimatePresence>
             </div>
 
             {/* Author Info & Pagination */}

@@ -45,26 +45,16 @@ const videos: Video[] = [
   },
   {
     id: 5,
-    title: "Press Meet Highlights",
-    description:
-      "Media interaction about upcoming events and awareness drives.",
-    date: "10 March 2022",
-    thumbnail: "/images/videoGallery/4.png",
-  },
-  {
-    id: 6,
-    title: "Press Meet Highlights",
-    description:
-      "Media interaction about upcoming events and awareness drives.",
-    date: "10 March 2022",
+    title: "Cultural Event Highlights",
+    description: "Coverage of film workers' annual cultural event.",
+    date: "18 March 2022",
     thumbnail: "/images/videoGallery/1.png",
   },
   {
-    id: 7,
-    title: "Press Meet Highlights",
-    description:
-      "Media interaction about upcoming events and awareness drives.",
-    date: "10 March 2022",
+    id: 6,
+    title: "Team Gathering",
+    description: "An insight into our leadership meeting.",
+    date: "22 March 2022",
     thumbnail: "/images/videoGallery/2.jpg",
   },
 ];
@@ -72,52 +62,40 @@ const videos: Video[] = [
 const VideoArticles = () => {
   const [selectedVideo, setSelectedVideo] = useState<Video | null>(null);
 
+  // Duplicate videos to make seamless looping
+  const loopedVideos = [...videos, ...videos];
+
   return (
-    <section className="text-center text-white relative">
-      {/* Video Grid */}
-      <div className="grid grid-cols-2 sm:grid-cols-4">
-        {videos.slice(0, 4).map((video) => (
-          <div
-            key={video.id}
-            onClick={() => setSelectedVideo(video)}
-            className="relative cursor-pointer group overflow-hidden border border-[#e33b3b]"
-          >
-            <img
-              src={video.thumbnail}
-              alt={video.title}
-              className="w-full h-40 object-cover group-hover:opacity-80 transition-opacity"
-            />
-          </div>
-        ))}
-      </div>
-      <div className="grid grid-cols-2 sm:grid-cols-3">
-        {videos.slice(4, 7).map((video) => (
-          <div
-            key={video.id}
-            onClick={() => setSelectedVideo(video)}
-            className="relative cursor-pointer group overflow-hidden border border-[#e33b3b]"
-          >
-            <img
-              src={video.thumbnail}
-              alt={video.title}
-              className="w-full h-40 object-cover group-hover:opacity-80 transition-opacity"
-            />
-          </div>
-        ))}
+    <section className="text-center text-white relative overflow-hidden py-10">
+      {/* Infinite Slider Container */}
+      <div className="w-full overflow-hidden relative">
+        <div className="flex animate-scroll-slow h-[50vh]">
+          {loopedVideos.map((video, idx) => (
+            <div
+              key={`${video.id}-${idx}`}
+              onClick={() => setSelectedVideo(video)}
+              className="w-[300px] sm:w-[300px] md:w-[500px] mx-2 cursor-pointer group overflow-hidden border border-[#e33b3b] rounded-lg h-full"
+            >
+              <img
+                src={video.thumbnail}
+                alt={video.title}
+                className="h-full w-full object-cover group-hover:opacity-80 transition-opacity"
+              />
+            </div>
+          ))}
+        </div>
       </div>
 
       {/* Overlay Preview */}
       {selectedVideo && (
         <div
           onClick={() => setSelectedVideo(null)}
-          className="fixed inset-0 bg-black bg-opacity-90 flex justify-center items-center z-50 px-4"
+          className="fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center z-50 px-4"
         >
-          {/* Stop click propagation inside modal */}
           <div
             onClick={(e) => e.stopPropagation()}
-            className="relative rounded-xl shadow-2xl max-w-3xl w-full p-6"
+            className="relative rounded-xl shadow-2xl max-w-3xl w-full p-6 bg-[#EDD8B5]"
           >
-            {/* Video Thumbnail */}
             <div className="relative mb-6">
               <img
                 src={selectedVideo.thumbnail}
@@ -128,65 +106,38 @@ const VideoArticles = () => {
                 <Play className="w-16 h-16 text-white bg-[#00000090] rounded-full p-3" />
               </div>
               <button
-                className="absolute top-4 right-4 bg-[#f7b733] hover:bg-[#ffcd4d] text-black rounded-full p-2 shadow-md transition"
+                className="absolute top-4 right-4 bg-[#6b0c0f] hover:bg-[#ffcd4d] text-black rounded-full p-2 shadow-md transition text-white"
                 title="Expand Video"
+                onClick={() => setSelectedVideo(null)}
               >
-                <Expand size={22} />
+                Close
               </button>
             </div>
 
-            {/* Title & Description */}
-            <p className="text-[20px] font-semibold text-[#F5E6CA] mb-3">
+            <p className="text-[20px] font-semibold text-[#6b0c0f] mb-3">
               {selectedVideo.title}
             </p>
 
-            {/* SVG Timeline Ruler */}
-            <div className="relative mt-4 mb-10">
-              {/* Date & Title below */}
-              <div className="flex flex-row items-center justify-around text-sm text-[#f5e6ca]">
-                <div className="flex items-center gap-2 text-[#f4c9b6] mb-1">
-                  <Calendar /> <span>{selectedVideo.date}</span>
-                </div>
-                |
-                <span className="text-center font-medium">
-                  {selectedVideo.description}
-                </span>
+            <div className="flex flex-col md:flex-row items-center justify-around text-sm text-[#6b0c0f]">
+              <div className="flex items-center gap-2 text-[#6b0c0f] mb-1">
+                <Calendar /> <span>{selectedVideo.date}</span>
               </div>
+              |
+              <span className="text-center font-medium text-[#6b0c0f]">
+                {selectedVideo.description}
+              </span>
+            </div>
+            <div className="flex justify-end mt-5">
+              <button
+                className="bg-[#6b0c0f] hover:bg-[#ffcd4d] text-black rounded-full px-5 py-2 shadow-md transition text-white"
+                title="Expand Video"
+              >
+                Read More
+              </button>
             </div>
           </div>
         </div>
       )}
-      <div className="mt-10 hidden md:block">
-        <svg
-          viewBox="0 0 800 80"
-          className="w-full h-full mx-auto"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          {/* Base line */}
-          <line
-            x1="0"
-            y1="40"
-            x2="800"
-            y2="40"
-            stroke="#EDD8B5"
-            strokeWidth="2"
-          />
-          {/* Red ticks */}
-          {Array.from({ length: 100 }).map((_, i) => (
-            <line
-              key={i}
-              x1={i * 8}
-              y1={i % 5 === 0 ? 25 : 35}
-              x2={i * 8}
-              y2="40"
-              stroke="#EDD8B5"
-              strokeWidth="2"
-            />
-          ))}
-          {/* Center arrow pointer */}
-          <polygon points="400,10 410,40 390,40" fill="#EDD8B5" />
-        </svg>
-      </div>
     </section>
   );
 };
