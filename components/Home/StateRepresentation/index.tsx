@@ -175,7 +175,7 @@ const NationwideFootprint = () => {
             {/* Left Column - States List */}
             <div className="w-full lg:w-1/2 flex flex-col items-start justify-between text-left">
               <div>
-                <h2 className="text-3xl md:text-[42px] font-poppins font-medium text-black mb-4 lg:mb-6 leading-[25px]">
+                <h2 className="text-3xl md:text-[42px] font-poppins text-black mb-4 lg:mb-6 leading-[25px]">
                   Nationwide Footprint
                 </h2>
                 <p className="text-base sm:text-lg lg:text-[20px] leading-relaxed text-[#690714]">
@@ -235,7 +235,7 @@ const NationwideFootprint = () => {
                       >
                         <div className="flex-1">
                           <h3
-                            className={`font-poppins text-black font-medium transition-all duration-300 ${
+                            className={`font-poppins text-black transition-all duration-300 ${
                               isActive
                                 ? "text-2xl sm:text-3xl"
                                 : "text-xl sm:text-2xl"
@@ -297,7 +297,7 @@ const NationwideFootprint = () => {
                               visibility: "visible",
                             }}
                           >
-                            <h4 className="text-gray-800 font-medium mb-3">
+                            <h4 className="text-gray-800 mb-3">
                               Representatives in {state.state}:
                             </h4>
                             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 w-full gap-4">
@@ -326,7 +326,7 @@ const NationwideFootprint = () => {
                                         />
                                       </div>
                                       <div className="flex-1 min-w-0">
-                                        <p className="font-medium text-gray-900 truncate">
+                                        <p className="text-gray-900 truncate">
                                           {school.name}
                                         </p>
                                       </div>

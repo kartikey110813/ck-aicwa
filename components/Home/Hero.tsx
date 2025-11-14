@@ -236,7 +236,7 @@ const Hero = () => {
                       </span>
 
                       {/* Title */}
-                      <h3 className="text-sm font-bold mt-2 line-clamp-2 leading-tight">
+                      <h3 className="text-sm mt-2 line-clamp-2 leading-tight">
                         {news.title}
                       </h3>
                     </div>
@@ -301,7 +301,7 @@ const Hero = () => {
                       </span>
 
                       {/* Title */}
-                      <h3 className="text-xs font-bold mt-1 line-clamp-2 leading-tight">
+                      <h3 className="text-xs mt-1 line-clamp-2 leading-tight">
                         {news.title}
                       </h3>
                     </div>

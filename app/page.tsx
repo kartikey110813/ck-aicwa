@@ -29,7 +29,7 @@ export default function HomePage() {
       <StateRepresentation />
       <NewsArticles />
       <Testimonials />
-      <FollowOurJourney />
+      {/* <FollowOurJourney /> */}
       <HoverFooter />
     </main>
   );

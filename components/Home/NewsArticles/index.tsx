@@ -21,7 +21,7 @@ const NewsArticles = () => {
         <div className="flex bg-[#601C1C] border-2 border-[#F5E6DC] rounded-[15px] p-1 overflow-hidden w-[90%] max-w-sm">
           <button
             onClick={() => setActiveTab("newspaper")}
-            className={`flex-1 py-3 text-md font-medium transition-all duration-600 rounded-[15px] ${
+            className={`flex-1 py-3 text-md transition-all duration-600 rounded-[15px] ${
               activeTab === "newspaper"
                 ? "bg-[#F10424] text-[#F5E6DC]"
                 : "bg-transparent text-[#F5E6DC]"
@@ -32,7 +32,7 @@ const NewsArticles = () => {
 
           <button
             onClick={() => setActiveTab("video")}
-            className={`flex-1 py-3 text-md font-medium transition-all duration-600 rounded-[15px] ${
+            className={`flex-1 py-3 text-md transition-all duration-600 rounded-[15px] ${
               activeTab === "video"
                 ? "bg-[#F10424] text-[#F5E6DC]"
                 : "bg-transparent text-[#F5E6DC]"

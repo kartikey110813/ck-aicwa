@@ -65,14 +65,14 @@ const StatsCard = React.forwardRef<HTMLDivElement, StatsCardProps>(
         <div className="flex items-baseline gap-1">
           <p
             ref={metricRef}
-            className="text-5xl font-bold tracking-tighter md:text-6xl"
+            className="text-5xl tracking-tighter md:text-6xl"
             aria-live="polite"
             aria-atomic="true"
           >
             0
           </p>
           {metricUnit && (
-            <span className="text-4xl font-bold text-muted-foreground md:text-5xl">
+            <span className="text-4xl text-muted-foreground md:text-5xl">
               {metricUnit}
             </span>
           )}

@@ -78,7 +78,7 @@ function FooterTwo() {
             {/* Brand section */}
             <div className="flex flex-col space-y-4">
               <div className="flex items-center space-x-2">
-                <span className="text-white text-3xl font-bold">AICWA</span>
+                <h3 className="text-white text-3xl">AICWA</h3>
               </div>
               <p className="text-sm leading-relaxed">
                 AICWA is the only association in Bollywood affiliated with
@@ -89,7 +89,7 @@ function FooterTwo() {
             {/* Footer link sections */}
             {footerLinks.map((section) => (
               <div key={section.title}>
-                <h4 className="text-white text-lg font-semibold mb-6">
+                <h4 className="text-white text-lg mb-6">
                   {section.title}
                 </h4>
                 <ul className="space-y-3">
@@ -109,7 +109,7 @@ function FooterTwo() {
 
             {/* Contact section */}
             <div>
-              <h4 className="text-white text-lg font-semibold mb-6">
+              <h4 className="text-white text-lg mb-6">
                 Contact Us
               </h4>
               <ul className="space-y-4">
@@ -139,7 +139,7 @@ function FooterTwo() {
           {/* Footer bottom */}
           <div className="flex flex-col md:flex-row justify-between items-center text-sm space-y-4 md:space-y-0">
             {/* Social icons */}
-            <div className="flex space-x-6 text-gray-400">
+            {/* <div className="flex space-x-6 text-gray-400">
               {socialLinks.map(({ icon, label, href }) => (
                 <a
                   key={label}
@@ -150,12 +150,12 @@ function FooterTwo() {
                   {icon}
                 </a>
               ))}
-            </div>
+            </div> */}
 
             {/* Copyright */}
-            <p className="text-center md:text-left">
+            {/* <p className="text-center md:text-left">
               &copy; {new Date().getFullYear()} AICWA. All rights reserved.
-            </p>
+            </p> */}
           </div>
         </div>
 

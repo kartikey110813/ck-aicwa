@@ -85,31 +85,31 @@ const Testimonials: React.FC = () => {
         {/* Right Side */}
         <div className="space-y-8 relative">
           <div>
-            <p className="text-[#690714] font-semibold text-lg mb-2">
+            <p className="text-[#690714] text-lg mb-2">
               Testimonials
             </p>
-            <h2 className="text-5xl font-bold text-gray-900 mb-6">
+            <h2 className="text-5xl text-gray-900 mb-6">
               What people say
             </h2>
-            <p className="text-black font-light">
+            <p className="text-black">
               Hear directly from people who experienced our work.
             </p>
           </div>
 
           {/* Quote Box */}
-          <div className="relative transition-all duration-700 ease-in-out">
+          <div className="relative transition-all duration-1000 ease-in-out">
             {/* Animated Quote Box */}
             <div className="relative">
               <AnimatePresence mode="wait">
-                <motion.div
+                <div
                   key={t.id} // triggers re-animation on change
-                  initial={{ y: -80, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  exit={{ y: 80, opacity: 0 }}
-                  transition={{
-                    duration: 0.8,
-                    ease: "easeOut",
-                  }}
+                  // initial={{ y: -80, opacity: 0 }}
+                  // animate={{ y: 0, opacity: 1 }}
+                  // exit={{ y: 80, opacity: 0 }}
+                  // transition={{
+                  //   duration: 0.8,
+                  //   ease: "easeOut",
+                  // }}
                   className="border-2 border-[#690714] p-8 relative bg-white rounded-xl shadow-md"
                 >
                   {/* Large Quote Mark */}
@@ -140,7 +140,7 @@ const Testimonials: React.FC = () => {
 
                   {/* Arrow pointer */}
                   <div className="absolute -bottom-6 left-20 w-0 h-0 border-l-[20px] border-l-transparent border-r-[20px] border-r-transparent border-t-[24px] border-t-[#690714]"></div>
-                </motion.div>
+                </div>
               </AnimatePresence>
             </div>
 

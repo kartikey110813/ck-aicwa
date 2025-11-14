@@ -45,12 +45,12 @@ const MembershipBenefitsMobile = () => {
                   : "border-transparent"
               }`}
             >
-              <h3 className="text-lg font-semibold mb-2">{benefit.title}</h3>
+              <h3 className="text-lg mb-2">{benefit.title}</h3>
               <p className="text-gray-600 mb-2 text-sm">
                 {benefit.description}
               </p>
               <span
-                className={`absolute text-[48px] font-extrabold right-4 bottom-0 ${
+                className={`absolute text-[48px] right-4 bottom-0 ${
                   selected.id === benefit.id ? "text-red-500" : "text-red-100"
                 }`}
               >
@@ -62,7 +62,7 @@ const MembershipBenefitsMobile = () => {
 
         {/* Bottom content (now shorter height) */}
         <div className="absolute bottom-0 left-0 w-full bg-gradient-to-b from-[#7a0e10] via-[#8b1417] to-[#3b0b0d] text-white p-6 rounded-t-3xl border-t-[10px] border-[#690714] h-[60vh] overflow-y-auto">
-          <h2 className="text-xl font-bold mb-2 text-center">
+          <h2 className="text-xl mb-2 text-center">
             Benefits of Membership
           </h2>
           <p className="text-gray-200 mb-4 text-sm text-center">
@@ -79,7 +79,7 @@ const MembershipBenefitsMobile = () => {
                 key={index}
                 className="px-3 py-3 rounded-2xl bg-gradient-to-b from-[#b5211b] to-[#6e0c0b] text-center shadow-[inset_0_2px_6px_rgba(255,255,255,0.2),0_6px_10px_rgba(0,0,0,0.4)]"
               >
-                <h2 className="text-[#fde8d2] text-sm font-semibold mb-2">
+                <h2 className="text-[#fde8d2] text-sm mb-2">
                   {stat.label}
                 </h2>
                 <ButtonBasic text="Get Now" />

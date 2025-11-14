@@ -566,7 +566,7 @@ export const HeroScrollVideo: React.FC<HeroScrollVideoProps> = ({
           margin: 0 0 .6rem 0;
           font-size: clamp(40px, 8vw, 96px);
           line-height: 0.98;
-          font-weight: 900;
+          // font-weight: 900;
           letter-spacing: -0.02em;
           text-wrap: balance;
           background: linear-gradient(90deg, #EDD8B5 0%, #EDD8B5 50%, #6b0c0f 100%);
@@ -578,7 +578,7 @@ export const HeroScrollVideo: React.FC<HeroScrollVideoProps> = ({
         .hsv-subtitle {
           margin: 0 0 1.25rem 0;
           font-size: clamp(18px, 3.5vw, 28px);
-          font-weight: 600;
+          // font-weight: 600;
           letter-spacing: 0.06em;
           text-transform: uppercase;
           color: var(--muted);
@@ -590,7 +590,7 @@ export const HeroScrollVideo: React.FC<HeroScrollVideoProps> = ({
           padding: .4rem .7rem;
           border-radius: 999px;
           font-size: .9rem;
-          font-weight: 600;
+          // font-weight: 600;
           letter-spacing: .02em;
           background: var(--muted-bg);
           border: 1px solid var(--muted-border);
@@ -676,7 +676,7 @@ export const HeroScrollVideo: React.FC<HeroScrollVideoProps> = ({
           font-size: clamp(26px, 5vw, 50px);
           line-height: 1.02;
           margin: 0;
-          font-weight: 900;
+          // font-weight: 900;
           letter-spacing: -0.01em;
           background: linear-gradient(90deg, #fff 0%, #fff 40%, #EDD8B5 100%);
           -webkit-background-clip: text;

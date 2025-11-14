@@ -53,7 +53,7 @@ const GallerySection = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-[24px] md:text-[36px] font-poppins font-bold text-white mb-6 leading-none">
+          <h2 className="text-[24px] md:text-[36px] font-poppins text-white mb-6 leading-none">
             Controversies We Have Handled
           </h2>
 
