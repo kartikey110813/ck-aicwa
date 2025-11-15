@@ -53,7 +53,7 @@ const StatsCard = React.forwardRef<HTMLDivElement, StatsCardProps>(
       <div
         ref={containerRef}
         className={cn(
-          "flex w-full h-full max-w-xs flex-col justify-start items-center mx-auto gap-4 p-6 text-card-foreground text-[#EDD8B5]",
+          "flex w-full h-full max-w-xs flex-col justify-start items-center mx-auto gap-4 text-[#EDD8B5]",
           className
         )}
         {...props}
@@ -65,7 +65,7 @@ const StatsCard = React.forwardRef<HTMLDivElement, StatsCardProps>(
         <div className="flex items-baseline gap-1">
           <p
             ref={metricRef}
-            className="text-5xl tracking-tighter md:text-6xl"
+            className="text-[55px]"
             aria-live="polite"
             aria-atomic="true"
           >
@@ -79,7 +79,7 @@ const StatsCard = React.forwardRef<HTMLDivElement, StatsCardProps>(
         </div>
 
         {/* Subtext */}
-        <p className="text-base text-muted-foreground">{subtext}</p>
+        <h3 className="text-[25px]">{subtext}</h3>
       </div>
     );
   }

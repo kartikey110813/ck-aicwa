@@ -7,7 +7,7 @@ const NewspaperArticles: React.FC = () => {
     <section className="text-[#fff2e7] min-h-screen px-20 hidden md:block">
       {/* Gallery Grid */}
       <div
-        className="grid gap-6 md:gap-8"
+        className="grid gap-6 md:gap-2 mb-2"
         style={{
           gridTemplateColumns: "repeat(3, minmax(0, 1fr))",
           gridAutoRows: "minmax(120px, auto)",
@@ -20,16 +20,16 @@ const NewspaperArticles: React.FC = () => {
         }}
       >
         {/* Left small articles */}
-        <div className="flex flex-col gap-6" style={{ gridArea: "left" }}>
+        <div className="flex flex-col gap-2" style={{ gridArea: "left" }}>
           {articles
             .filter((a) => !a.isFeatured)
             .slice(0, Math.ceil((articles.length - 1) / 2))
             .map((article) => (
               <article
                 key={article.id}
-                className="bg-[#fff2e7] text-[#381d12] border border-[#b6a492] rounded-[11px] relative flex flex-col overflow-hidden p-4"
+                className="bg-[#fff2e7] text-[#381d12] border border-[#b6a492] rounded-[20px] relative flex flex-col overflow-hidden p-4"
               >
-                <div className="relative rounded-[11px] overflow-hidden flex-shrink-0">
+                <div className="relative rounded-[20px] overflow-hidden flex-shrink-0">
                   {article.imageUrl && (
                     <img
                       src={article.imageUrl}
@@ -79,10 +79,10 @@ const NewspaperArticles: React.FC = () => {
           .map((article) => (
             <article
               key={article.id}
-              className="bg-[#fff2e7] text-[#381d12] border border-[#b6a492] rounded-[11px] relative flex flex-col overflow-hidden p-4"
+              className="bg-[#fff2e7] text-[#381d12] border border-[#b6a492] rounded-[20px] relative flex flex-col overflow-hidden p-4"
               style={{ gridArea: "featured" }}
             >
-              <div className="relative rounded-[11px] overflow-hidden flex-shrink-0">
+              <div className="relative rounded-[20px] overflow-hidden flex-shrink-0">
                 {article.imageUrl && (
                   <img
                     src={article.imageUrl}
@@ -126,16 +126,16 @@ const NewspaperArticles: React.FC = () => {
           ))}
 
         {/* Right small articles */}
-        <div className="flex flex-col gap-6" style={{ gridArea: "right" }}>
+        <div className="flex flex-col gap-2" style={{ gridArea: "right" }}>
           {articles
             .filter((a) => !a.isFeatured)
             .slice(Math.ceil((articles.length - 1) / 2))
             .map((article) => (
               <article
                 key={article.id}
-                className="bg-[#fff2e7] text-[#381d12] border border-[#b6a492] rounded-[11px] relative flex flex-col overflow-hidden p-4"
+                className="bg-[#fff2e7] text-[#381d12] border border-[#b6a492] rounded-[20px] relative flex flex-col overflow-hidden p-4"
               >
-                <div className="relative rounded-[11px] overflow-hidden flex-shrink-0">
+                <div className="relative rounded-[20px] overflow-hidden flex-shrink-0">
                   {article.imageUrl && (
                     <img
                       src={article.imageUrl}
@@ -179,9 +179,8 @@ const NewspaperArticles: React.FC = () => {
             ))}
         </div>
       </div>
-      <br />
       <div
-        className="grid gap-6 md:gap-8"
+        className="grid gap-6 md:gap-2"
         style={{
           gridTemplateColumns: "repeat(3, minmax(0, 1fr))",
           gridAutoRows: "minmax(120px, auto)",
@@ -194,16 +193,16 @@ const NewspaperArticles: React.FC = () => {
         }}
       >
         {/* Left small articles */}
-        <div className="flex flex-col gap-6" style={{ gridArea: "left" }}>
+        <div className="flex flex-col gap-2" style={{ gridArea: "left" }}>
           {articles
             .filter((a) => !a.isFeatured)
             .slice(0, Math.ceil((articles.length - 1) / 2))
             .map((article) => (
               <article
                 key={article.id}
-                className="bg-[#fff2e7] text-[#381d12] border border-[#b6a492] rounded-[11px] relative flex flex-col overflow-hidden p-4"
+                className="bg-[#fff2e7] text-[#381d12] border border-[#b6a492] rounded-[20px] relative flex flex-col overflow-hidden p-4"
               >
-                <div className="relative rounded-[11px] overflow-hidden flex-shrink-0">
+                <div className="relative rounded-[20px] overflow-hidden flex-shrink-0">
                   {article.imageUrl && (
                     <img
                       src={article.imageUrl}
@@ -253,10 +252,10 @@ const NewspaperArticles: React.FC = () => {
           .map((article) => (
             <article
               key={article.id}
-              className="bg-[#fff2e7] text-[#381d12] border border-[#b6a492] rounded-[11px] relative flex flex-col overflow-hidden p-4"
+              className="bg-[#fff2e7] text-[#381d12] border border-[#b6a492] rounded-[20px] relative flex flex-col overflow-hidden p-4"
               style={{ gridArea: "featured" }}
             >
-              <div className="relative rounded-[11px] overflow-hidden flex-shrink-0">
+              <div className="relative rounded-[20px] overflow-hidden flex-shrink-0">
                 {article.imageUrl && (
                   <img
                     src={article.imageUrl}
@@ -300,16 +299,16 @@ const NewspaperArticles: React.FC = () => {
           ))}
 
         {/* Right small articles */}
-        <div className="flex flex-col gap-6" style={{ gridArea: "right" }}>
+        <div className="flex flex-col gap-2" style={{ gridArea: "right" }}>
           {articles
             .filter((a) => !a.isFeatured)
             .slice(Math.ceil((articles.length - 1) / 2))
             .map((article) => (
               <article
                 key={article.id}
-                className="bg-[#fff2e7] text-[#381d12] border border-[#b6a492] rounded-[11px] relative flex flex-col overflow-hidden p-4"
+                className="bg-[#fff2e7] text-[#381d12] border border-[#b6a492] rounded-[20px] relative flex flex-col overflow-hidden p-4"
               >
-                <div className="relative rounded-[11px] overflow-hidden flex-shrink-0">
+                <div className="relative rounded-[20px] overflow-hidden flex-shrink-0">
                   {article.imageUrl && (
                     <img
                       src={article.imageUrl}

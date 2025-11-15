@@ -53,7 +53,7 @@ const GallerySection = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-[24px] md:text-[36px] font-poppins text-white mb-6 leading-none">
+          <h2 className="text-[24px] md:text-[36px] text-[#EDD8B5] mb-6 leading-none">
             Controversies We Have Handled
           </h2>
 
@@ -95,7 +95,7 @@ const GallerySection = () => {
               key={item.id}
               variants={itemVariants}
               whileHover={{ y: -10, scale: 1.02 }}
-              className={`group relative overflow-hidden rounded-2xl bg-gradient-to-b from-white/10 to-white/5 backdrop-blur-sm border border-white/10 hover:border-gold/30 transition-all duration-300 ${
+              className={`group relative overflow-hidden rounded-[20px] bg-gradient-to-b from-white/10 to-white/5 backdrop-blur-sm border border-white/10 hover:border-gold/30 transition-all duration-300 ${
                 index % 7 === 0 || index % 7 === 3
                   ? "md:col-span-2 md:row-span-2"
                   : ""
@@ -134,10 +134,10 @@ const GallerySection = () => {
 
                 {/* Content Overlay */}
                 <div className="absolute bottom-0 left-0 right-0 p-6 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                  <h3 className="text-white font-poppins font-semibold text-lg mb-2">
-                    {item.title}
-                  </h3>
-                  <p className="text-gray-300 text-sm">{item.description}</p>
+                  <p className="text-white text-[24px] mb-2">{item.title}</p>
+                  <p className="text-gray-300 text-[14px]">
+                    {item.description}
+                  </p>
                 </div>
               </div>
             </motion.div>

@@ -175,19 +175,19 @@ const NationwideFootprint = () => {
             {/* Left Column - States List */}
             <div className="w-full lg:w-1/2 flex flex-col items-start justify-between text-left">
               <div>
-                <h2 className="text-3xl md:text-[36px] font-poppins text-black mb-4 lg:mb-6 leading-[25px]">
+                <h2 className="text-[36px] text-[#690714] mb-2 lg:mb-2">
                   Nationwide Footprint
                 </h2>
-                <p className="text-base sm:text-lg lg:text-[20px] leading-relaxed text-[#690714]">
-                  Sainik Schools are strategically located across states to
-                  provide equal opportunity and access to disciplined,
-                  defense-oriented education.
+                <p className="sm:text-[18px] lg:text-[18px] text-[#690714]">
+                  AICWA are strategically located across states to provide equal
+                  opportunity and access to disciplined, defense-oriented
+                  education.
                 </p>
               </div>
-              <div className="w-full max-w-[500px]">
+              <div className="w-full max-w-[600px]">
                 <Image
                   src="/stateRep/map.png"
-                  alt="India Map showing Sainik School locations"
+                  alt="India Map showing AICWA locations"
                   width={500}
                   height={450}
                   className="w-full h-auto object-contain"
@@ -199,7 +199,7 @@ const NationwideFootprint = () => {
             {/* Right Column - Title & Map */}
             <div
               ref={containerRef}
-              className="w-full lg:w-1/2 space-y-4 lg:max-h-[570px] overflow-scroll scrollbar-hide"
+              className="w-full lg:w-1/2 space-y-4 lg:max-h-full overflow-scroll scrollbar-hide"
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
               style={{
@@ -219,7 +219,7 @@ const NationwideFootprint = () => {
                   return (
                     <div
                       key={`state-${state.state}-${idx}-${renderKey}`}
-                      className="bg-white rounded-xl shadow-lg overflow-hidden w-full transition-all duration-300 hover:shadow-xl"
+                      className="bg-white rounded-[20px] shadow-lg overflow-hidden w-full transition-all duration-300 hover:shadow-xl"
                       style={{
                         display: "block",
                         visibility: "visible",
@@ -297,15 +297,15 @@ const NationwideFootprint = () => {
                               visibility: "visible",
                             }}
                           >
-                            <h4 className="text-gray-800 mb-3">
+                            <p className="text-gray-800 text-[18px] mb-3">
                               Representatives in {state.state}:
-                            </h4>
+                            </p>
                             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 w-full gap-4">
                               {state.schools.map(
                                 (school: any, sIdx: number) => (
                                   <div
                                     key={`school-${school.id}-${sIdx}`}
-                                    className="bg-white rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow cursor-pointer border border-gray-200"
+                                    className="bg-white rounded-[20px] p-4 shadow-sm hover:shadow-md transition-shadow cursor-pointer border border-gray-200"
                                     onClick={() => handleSchoolClick(school.id)}
                                   >
                                     <div className="flex flex-col gap-4  items-center space-x-3">
@@ -326,7 +326,7 @@ const NationwideFootprint = () => {
                                         />
                                       </div>
                                       <div className="flex-1 min-w-0">
-                                        <p className="text-gray-900 truncate">
+                                        <p className="text-gray-900 text-[18px] truncate text-wrap text-center">
                                           {school.name}
                                         </p>
                                       </div>

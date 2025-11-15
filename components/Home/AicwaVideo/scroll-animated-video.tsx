@@ -471,9 +471,9 @@ export const HeroScrollVideo: React.FC<HeroScrollVideoProps> = ({
       <div className="hsv-container" ref={headlineRef}>
         <div className="hsv-headline">
           <h1 className="hsv-title">{title}</h1>
-          {subtitle ? <h2 className="hsv-subtitle">{subtitle}</h2> : null}
-          {meta ? <div className="hsv-meta">{meta}</div> : null}
-          {credits ? <div className="hsv-credits">{credits}</div> : null}
+          {subtitle ? <p className="hsv-subtitle">{subtitle}</p> : null}
+          {meta ? <p className="hsv-meta">{meta}</p> : null}
+          {credits ? <p className="hsv-credits">{credits}</p> : null}
         </div>
       </div>
 
@@ -490,9 +490,9 @@ export const HeroScrollVideo: React.FC<HeroScrollVideoProps> = ({
             {/* overlay that reveals */}
             <div className="hsv-overlay" ref={overlayRef}>
               {overlay?.caption ? (
-                <div className="hsv-caption" ref={overlayCaptionRef}>
+                <p className="hsv-caption" ref={overlayCaptionRef}>
                   {overlay.caption}
-                </div>
+                </p>
               ) : null}
               <div className="hsv-overlay-content" ref={overlayContentRef}>
                 {overlay?.heading ? <h3>{overlay.heading}</h3> : null}
@@ -564,7 +564,7 @@ export const HeroScrollVideo: React.FC<HeroScrollVideoProps> = ({
 
         .hsv-title {
           margin: 0 0 .6rem 0;
-          font-size: clamp(40px, 8vw, 96px);
+          font-size: 55px;
           line-height: 0.98;
           // font-weight: 900;
           letter-spacing: -0.02em;
@@ -577,39 +577,38 @@ export const HeroScrollVideo: React.FC<HeroScrollVideoProps> = ({
         }
         .hsv-subtitle {
           margin: 0 0 1.25rem 0;
-          font-size: clamp(18px, 3.5vw, 28px);
-          // font-weight: 600;
+          font-size: 25px;
           letter-spacing: 0.06em;
           text-transform: uppercase;
           color: var(--muted);
+          letter-spacing: 0.14em;
+          text-transform: uppercase;
         }
         .hsv-meta {
           display: inline-flex;
           align-items: center;
           gap: .5rem;
           padding: .4rem .7rem;
-          border-radius: 999px;
-          font-size: .9rem;
-          // font-weight: 600;
+          border-radius: 20px;
           letter-spacing: .02em;
           background: var(--muted-bg);
           border: 1px solid var(--muted-border);
           box-shadow: var(--shadow);
           color: var(--text);
           margin: 1rem 0 0 0;
+          font-size: 14px
         }
         .hsv-meta::before {
           content: "";
           width: 8px;
           height: 8px;
-          border-radius: 999px;
+          border-radius: 20px;
           background: linear-gradient(135deg,rgb(243, 206, 143), #EDD8B5);
           display: inline-block;
         }
         .hsv-credits {
           margin-top: 1.1rem;
-          font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono","Courier New", monospace;
-          font-size: 0.85rem;
+          font-size: 14px;
           text-transform: uppercase;
           letter-spacing: 0.12em;
           color: var(--muted);
@@ -654,8 +653,7 @@ export const HeroScrollVideo: React.FC<HeroScrollVideoProps> = ({
         }
 
         .hsv-caption {
-          font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono","Courier New", monospace;
-          font-size: 0.85rem;
+          font-size: 14px;
           text-transform: uppercase;
           letter-spacing: 0.14em;
           // position: absolute;
@@ -673,11 +671,9 @@ export const HeroScrollVideo: React.FC<HeroScrollVideoProps> = ({
           gap: 0.9rem;
         }
         .hsv-overlay-content h3 {
-          font-size: clamp(26px, 5vw, 50px);
+          font-size: 55px;
           line-height: 1.02;
           margin: 0;
-          // font-weight: 900;
-          letter-spacing: -0.01em;
           background: linear-gradient(90deg, #fff 0%, #fff 40%, #EDD8B5 100%);
           -webkit-background-clip: text;
           background-clip: text;
@@ -696,8 +692,9 @@ export const HeroScrollVideo: React.FC<HeroScrollVideoProps> = ({
           opacity: 0.9;
         }
         .hsv-overlay-content p {
-          font-size: clamp(15px, 2.1vw, 19px);
-          line-height: 1.75;
+          font-size: 14px;
+          letter-spacing: 0.14em;
+          text-transform: uppercase;
           margin: 0;
           color: #f3f4f6; /* better contrast over video */
           opacity: 0.95;
@@ -705,6 +702,15 @@ export const HeroScrollVideo: React.FC<HeroScrollVideoProps> = ({
 
         @media (max-width: 900px) {
           .hsv-overlay-content { max-width: 40ch; }
+          .hsv-title {
+          font-size: 40px;
+          }
+           .hsv-subtitle {
+           font-size: 14px;
+           }
+           .hsv-overlay-content h3 {
+           font-size: 40px;
+           }
         }
       `}</style>
     </div>

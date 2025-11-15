@@ -2,8 +2,8 @@ import React from "react";
 
 const ButtonBasic = ({ text }: { text: string }) => {
   return (
-    <button className="relative bg-transparent text-white font-semibold text-lg px-4 py-2 overflow-hidden group">
-      <div className="md:px-5 md:py-1 px-3 py-[0px] bg-[#F10424] text-[8px] md:text-[14px] rounded-2xl ">
+    <button className="relative bg-transparent text-[#EDD8B5] text-[16px] px-4 py-3 overflow-hidden">
+      <div className="md:px-5 md:py-2 px-3 py-[0px] bg-[#F10424] rounded-[20px]">
         {text}
       </div>
     </button>

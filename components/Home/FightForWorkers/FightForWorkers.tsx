@@ -9,10 +9,10 @@ function FightForWorkers() {
     <>
       <div className="bg-white dark:bg-black text-center py-10 md:px-20 px-6">
         <div className="mb-10">
-          <h2 className="text-4xl mb-2 text-[#EDD8B5]">
+          <h2 className="text-[36px] mb-2 text-[#EDD8B5]">
             4 Pillars of AICWA
           </h2>
-          <p className="text-[#CF0E27]">
+          <p className="text-[#EDD8B5] text-[18px]">
             AICWA will draft a justice pathway against the injustice you have
             suffered
           </p>
@@ -144,12 +144,12 @@ const Card = ({
     <div
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="border border-black/[0.2] group/canvas-card flex items-center justify-center dark:border-white/[0.2]  max-w-sm w-full mx-auto p-4 relative h-[30rem] relative"
+      className="border border-black/[0.2] group/canvas-card flex items-center justify-center dark:border-white/[0.2] rounded-[20px]  max-w-sm w-full mx-auto p-4 relative h-[30rem] relative"
     >
-      <Icon className="absolute h-6 w-6 -top-3 -left-3 dark:text-white text-black" />
+      {/* <Icon className="absolute h-6 w-6 -top-3 -left-3 dark:text-white text-black" />
       <Icon className="absolute h-6 w-6 -bottom-3 -left-3 dark:text-white text-black" />
       <Icon className="absolute h-6 w-6 -top-3 -right-3 dark:text-white text-black" />
-      <Icon className="absolute h-6 w-6 -bottom-3 -right-3 dark:text-white text-black" />
+      <Icon className="absolute h-6 w-6 -bottom-3 -right-3 dark:text-white text-black" /> */}
 
       <AnimatePresence>
         {hovered && (
@@ -164,10 +164,10 @@ const Card = ({
       </AnimatePresence>
 
       <div className="relative z-20">
-        <div className="text-center group-hover/canvas-card:-translate-y-4 group-hover/canvas-card:opacity-0 transition duration-200 w-full  mx-auto flex items-center justify-center">
+        <div className="text-center text-[#EDD8B5] group-hover/canvas-card:-translate-y-4 group-hover/canvas-card:opacity-0 transition duration-200 w-full  mx-auto flex items-center justify-center">
           {icon}
         </div>
-        <h1 className="dark:text-white text-2xl opacity-0 group-hover/canvas-card:opacity-100 relative z-10 text-black mt-4  font-bold group-hover/canvas-card:text-white group-hover/canvas-card:-translate-y-2 transition duration-200">
+        <h1 className="text-[#EDD8B5] text-[25px] opacity-0 group-hover/canvas-card:opacity-100 relative z-10 text-black mt-4 group-hover/canvas-card:text-[#EDD8B5] group-hover/canvas-card:-translate-y-2 transition duration-200">
           {title}
         </h1>
       </div>

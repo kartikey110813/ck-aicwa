@@ -89,15 +89,13 @@ function FooterTwo() {
             {/* Footer link sections */}
             {footerLinks.map((section) => (
               <div key={section.title}>
-                <h4 className="text-white text-lg mb-6">
-                  {section.title}
-                </h4>
+                <h4 className="text-white text-lg mb-6">{section.title}</h4>
                 <ul className="space-y-3">
                   {section.links.map((link) => (
                     <li key={link.label} className="relative">
                       <a
                         href={link.href}
-                        className="hover:text-[#3ca2fa] transition-colors"
+                        className="hover:text-white transition-colors"
                       >
                         {link.label}
                       </a>
@@ -109,9 +107,7 @@ function FooterTwo() {
 
             {/* Contact section */}
             <div>
-              <h4 className="text-white text-lg mb-6">
-                Contact Us
-              </h4>
+              <h4 className="text-white text-lg mb-6">Contact Us</h4>
               <ul className="space-y-4">
                 {contactInfo.map((item, i) => (
                   <li key={i} className="flex items-center space-x-3">
@@ -119,12 +115,12 @@ function FooterTwo() {
                     {item.href ? (
                       <a
                         href={item.href}
-                        className="hover:text-[#3ca2fa] transition-colors"
+                        className="hover:text-white transition-colors"
                       >
                         {item.text}
                       </a>
                     ) : (
-                      <span className="hover:text-[#3ca2fa] transition-colors">
+                      <span className="hover:text-white transition-colors">
                         {item.text}
                       </span>
                     )}

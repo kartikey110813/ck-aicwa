@@ -38,7 +38,7 @@ export default function InterectiveCardDesign() {
         ref={cardRef}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
-        className="relative md:w-[500px] md:h-[300px] w-[200px] h-[120px] rounded-2xl transition-transform duration-150 ease-out cursor-pointer [transform-style:preserve-3d]"
+        className="relative md:w-[300px] md:h-[200px] w-[200px] h-[120px] rounded-[20px] transition-transform duration-150 ease-out cursor-pointer [transform-style:preserve-3d]"
         style={{
           backgroundImage: `url('/images/aicwa-card.png')`,
           backgroundSize: "contain",
@@ -48,7 +48,7 @@ export default function InterectiveCardDesign() {
         }}
       >
         <div
-          className="absolute inset-0 rounded-2xl pointer-events-none transition-opacity duration-200"
+          className="absolute inset-0 rounded-[20px] pointer-events-none transition-opacity duration-200"
           style={{
             background: `radial-gradient(circle at var(--light-x, 50%) var(--light-y, 50%), rgba(255,255,255,0.3), transparent 60%)`,
           }}

@@ -94,7 +94,7 @@ const Hero = () => {
             loop={true}
             className="hero-swiper w-full overflow-hidden bg-[#691218]"
           > */}
-          <div className="hero-swiper w-full overflow-hidden bg-[#691218]">
+          <div className="hero-swiper w-full overflow-hidden">
             {newsData.map((news, index) => (
               <SwiperSlide key={news.id}>
                 <div className="relative h-full md:h-[90vh] overflow-hidden">
@@ -106,7 +106,7 @@ const Hero = () => {
                   />
 
                   {/* Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/5 via-black/40 to-transparent" />
 
                   {/* Content */}
                   <div className="relative z-10 flex flex-col justify-center h-[100%] p-6 sm:p-8 md:p-12">
@@ -126,7 +126,7 @@ const Hero = () => {
                         initial={{ y: 30, opacity: 0 }}
                         whileInView={{ y: 0, opacity: 1 }}
                         transition={{ duration: 0.6, delay: 0.4 }}
-                        className="text-sm md:text-xl text-[red] mb-6 max-w-3xl leading-relaxed"
+                        className="text-[16px] text-[#EDD8B5] mb-6 max-w-3xl leading-relaxed"
                         data-swiper-parallax="-100"
                       >
                         {news.excerpt}
@@ -136,7 +136,7 @@ const Hero = () => {
                         initial={{ y: 50, opacity: 0 }}
                         whileInView={{ y: 0, opacity: 1 }}
                         transition={{ duration: 0.8, delay: 0.3 }}
-                        className="text-2xl md:text-5xl lg:text-6xl text-white mb-6 leading-tight md:w-[50%]"
+                        className="text-[40px] md:text-[55px] text-white mb-6 leading-tight md:w-[50%]"
                         data-swiper-parallax="-200"
                       >
                         {news.title}
@@ -210,14 +210,14 @@ const Hero = () => {
             }}
             speed={2500}
             loop={true}
-            className="small-swiper rounded-lg overflow-hidden shadow-lg"
+            className="small-swiper rounded-[20px] overflow-hidden"
             onSlideChange={(swiper) =>
               setCurrentSlide((swiper.realIndex % newsDataMini.length) + 1)
             }
           >
             {newsDataMini.slice(0, 6).map((news, index) => (
               <SwiperSlide key={`small-${news.id}`}>
-                <div className="relative h-28 sm:h-32 cursor-pointer group">
+                <div className="relative h-28 sm:h-32 cursor-pointer px-2">
                   {/* Background Image */}
                   <div
                     className="absolute inset-0 bg-cover bg-center bg-no-repeat transform scale-110 group-hover:scale-100 transition-transform duration-500"
@@ -229,24 +229,26 @@ const Hero = () => {
 
                   {/* Content */}
                   <div className="relative z-10 h-full flex flex-col justify-end p-3">
-                    <div className="text-white">
+                    <div className="text-[#EDD8B5]">
                       {/* Category */}
-                      <span className="text-xs bg-[#F10424] px-2 py-1 rounded-full font-semibold">
+                      <span className="text-[12px] bg-[#6b0c0f] px-2 py-1 rounded-[20px]">
                         {news.category}
                       </span>
 
                       {/* Title */}
-                      <h3 className="text-sm mt-2 line-clamp-2 leading-tight">
+                      <p className="text-sm mt-2 line-clamp-2 leading-tight">
                         {news.title}
-                      </h3>
+                      </p>
                     </div>
                   </div>
                 </div>
               </SwiperSlide>
             ))}
           </Swiper>
-          <div className="flex items-center justify-between text-sm font-semibold text-black mt-1">
-            <span>{String(currentSlide).padStart(2, "0")}</span>
+          <div className="flex items-center justify-between mt-1">
+            <p className="text-[16px] font-bold text-black">
+              {String(currentSlide).padStart(2, "0")}
+            </p>
 
             <div className="relative flex-1 mx-3 h-[3px] bg-gray-300 rounded-full overflow-hidden">
               <div
@@ -257,7 +259,9 @@ const Hero = () => {
               />
             </div>
 
-            <span>{String(newsDataMini.length).padStart(2, "0")}</span>
+            <p className="text-[16px] font-bold text-black">
+              {String(newsDataMini.length).padStart(2, "0")}
+            </p>
           </div>
         </motion.div>
 
@@ -282,7 +286,7 @@ const Hero = () => {
           >
             {newsDataMini.slice(0, 4).map((news, index) => (
               <SwiperSlide key={`mobile-${news.id}`}>
-                <div className="relative h-24 overflow-hidden cursor-pointer group">
+                <div className="relative h-24 overflow-hidden cursor-pointer px-2">
                   {/* Background Image */}
                   <div
                     className="absolute inset-0 bg-cover bg-center bg-no-repeat transform scale-110 group-hover:scale-100 transition-transform duration-500"
@@ -294,16 +298,16 @@ const Hero = () => {
 
                   {/* Content */}
                   <div className="relative z-10 h-full flex flex-col justify-end p-2">
-                    <div className="text-white">
+                    <div className="text-[#EDD8B5]">
                       {/* Category */}
-                      <span className="text-xs bg-[#F10424] px-1.5 py-0.5 rounded-full font-semibold">
+                      <span className="text-[12px] bg-[#6b0c0f] px-2 py-1 rounded-[20px]">
                         {news.category}
                       </span>
 
                       {/* Title */}
-                      <h3 className="text-xs mt-1 line-clamp-2 leading-tight">
+                      <p className="text-xs mt-1 line-clamp-2 leading-tight">
                         {news.title}
-                      </h3>
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -329,7 +333,7 @@ const Hero = () => {
         }
 
         .swiper-pagination-bullet-active-custom {
-          background: #f10424;
+          background: #6b0c0f;
           transform: scale(1.2);
         }
 
