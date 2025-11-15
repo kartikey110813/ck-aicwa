@@ -6,7 +6,8 @@ const demoFrames: any = [
   {
     id: 1,
     video:
-      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+      "https://static.cdn-luma.com/files/981e483f71aa764b/Company%20Thing%20Exported.mp4",
+
     defaultPos: { x: 0, y: 0, w: 4, h: 4 },
     mediaSize: 1,
     isHovered: false,
