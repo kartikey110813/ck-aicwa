@@ -175,7 +175,7 @@ const NationwideFootprint = () => {
             {/* Left Column - States List */}
             <div className="w-full lg:w-1/2 flex flex-col items-start justify-between text-left">
               <div>
-                <h2 className="text-3xl md:text-[42px] font-poppins text-black mb-4 lg:mb-6 leading-[25px]">
+                <h2 className="text-3xl md:text-[36px] font-poppins text-black mb-4 lg:mb-6 leading-[25px]">
                   Nationwide Footprint
                 </h2>
                 <p className="text-base sm:text-lg lg:text-[20px] leading-relaxed text-[#690714]">

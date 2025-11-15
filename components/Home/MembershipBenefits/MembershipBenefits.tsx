@@ -59,7 +59,7 @@ const MembershipBenefits = () => {
           <div className="absolute top-[-22px] left-0 w-full h-5 bg-[#EDD8B5] [clip-path:polygon(0_0,10%_0,12%_25%,88%_25%,90%_0,100%_0,100%_100%,90%_100%,88%_75%,12%_75%,10%_100%,0_100%)]"></div>
           <div className="flex flex-col h-full justify-between text-start md:pl-[15%]">
             <div>
-              <h2 className="text-3xl mb-2">
+              <h2 className="text-[24px] md:text-[36px] mb-2">
                 Benefits of Membership
               </h2>
               <p className="text-gray-200 mb-6">

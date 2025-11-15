@@ -88,7 +88,7 @@ const Testimonials: React.FC = () => {
             <p className="text-[#690714] text-lg mb-2">
               Testimonials
             </p>
-            <h2 className="text-5xl text-gray-900 mb-6">
+            <h2 className="text-[36px] text-gray-900 mb-6">
               What people say
             </h2>
             <p className="text-black">
